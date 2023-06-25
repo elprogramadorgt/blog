@@ -12,7 +12,15 @@ const HomePage = () => {
     ));
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-red-900">{postPreviews}</div>
+        <>
+
+
+        <div className="p-6 mx-auto  flex flex-wrap items-center justify-center rounded">
+         {postPreviews}
+        </div>
+        </>
+        
+       
     );
 };
 
