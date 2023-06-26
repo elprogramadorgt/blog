@@ -5,7 +5,6 @@ import { PostMetadata } from "../interfaces/PostMedadata";
 const getPostMetadata = (): PostMetadata[] => {
     const folder = "posts/";
     const files = fs.readdirSync(folder);
-    // console.log(files, ';000000000000000000000000000000')
     const markdownPosts = files.filter((file) => file.endsWith(".md"));
 
 
@@ -17,7 +16,8 @@ const getPostMetadata = (): PostMetadata[] => {
         return {
             title: matterResult.data.title,
             date: matterResult.data.date,
-            subtitle: matterResult.data.subtitle,
+            description: matterResult.data.description,
+            author: matterResult.data.author,
             slug: fileName.replace(".md", ""),
         };
     });
