@@ -4,7 +4,6 @@ import Image from 'next/image'
 export default function About() {
 
     return <>
-        <Navbar></Navbar>
         <main className="container mx-auto px-4 py-8 flex-grow">
             <section className="flex items-center	flex-col">
                 <h1 className="text-4xl font-bold text-slate-900">Hallo soy Edu :)</h1>
