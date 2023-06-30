@@ -4,5 +4,5 @@ export interface PostMetadata {
     description: string;
     author: string
     slug: string;
-    index:number
+    id:number
 }

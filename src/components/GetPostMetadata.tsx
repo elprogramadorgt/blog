@@ -9,11 +9,12 @@ const getPostMetadata = (): PostMetadata[] => {
 
 
     // Get gray-matter data from each file.
-    const posts = markdownPosts.map((fileName) => {
+    const posts = markdownPosts.map((fileName :any) => {
         const fileContents = fs.readFileSync(`posts/${fileName}`, "utf8");
         const matterResult = matter(fileContents);
-        console.log(matterResult)
+
         return {
+            id: matterResult.data.id,
             title: matterResult.data.title,
             date: matterResult.data.date,
             description: matterResult.data.description,
