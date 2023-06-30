@@ -1,5 +1,7 @@
+import Navbar from '@/components/NavBar'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,7 +22,18 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Fauna+One&display=swap" rel="stylesheet" />
       </head>
-      <body className={`${inter.className} bg-gray-200  flex flex-col min-h-screen`} >{children}</body>
+      <body className={`${inter.className} bg-gray-200  flex flex-col min-h-screen`} >
+        <Navbar></Navbar>
+
+        <main className="container mx-auto px-4 flex-grow">
+
+          {children}
+
+        </main>
+
+        <Footer></Footer>
+
+      </body>
     </html>
   )
 }
