@@ -5,6 +5,7 @@
 const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
+    output: 'standalone',
 };
 
 const withMDX = require('@next/mdx')({

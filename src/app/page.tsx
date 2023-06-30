@@ -19,7 +19,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white shadow rounded-lg p-6">
               <h2 className="text-xl font-bold mb-2">Article 1</h2>
-              <p className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <div className="container mx-auto max-w-md">
+                <div className="relative">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/4UfoJPzZl5w" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                </div>
+              </div>
               <a href="#" className="mt-4 inline-block text-blue-600 hover:text-blue-800">Read more</a>
             </div>
             <div className="bg-white shadow rounded-lg p-6">
