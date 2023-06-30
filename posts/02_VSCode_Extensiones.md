@@ -10,7 +10,7 @@
 
 Hola este es el listado de extensiones en mi vscode, te dejo de una los comandos para que lo instales facilmente.
 
-```
+```shell
 code --install-extension Angular.ng-template
 code --install-extension bierner.markdown-mermaid
 code --install-extension bradlc.vscode-tailwindcss
