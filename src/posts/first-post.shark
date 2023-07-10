@@ -1,0 +1,24 @@
+---
+title: First Post
+description: First Post
+date: '07-07-2023'
+categories: 
+    - sveltekit
+    - Svelte
+    - dendri
+    - kasuma
+    - faith
+published: true
+---
+
+## Markdown
+
+
+Que tal
+
+
+```ts
+function sayHI(){
+    console.log(`Hey ${name}! 👋`)
+}
+```
