@@ -1,24 +1,25 @@
-<script>
+<script lang="ts">
+	import Footer from './Footer.svelte';
 	import Header from './Header.svelte';
 
-	import Footer from './Footer.svelte';
 	import 'open-props/style';
 	import 'open-props/normalize';
 	import 'open-props/buttons';
 
-	import './styles.css';
+	import './app.css';
 </script>
 
-<div class="app">
+<div class="layout">
+	<!-- Header -->
 	<Header />
 
 	<main>
+		<!-- Black hole for other content -->
 		<slot />
 	</main>
 
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
+	<!-- Footer -->
+	<Footer />
 </div>
 
 <style>

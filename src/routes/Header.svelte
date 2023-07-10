@@ -1,11 +1,8 @@
-<script>
-	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
-	import github from '$lib/images/github.svg';
+<script lang="ts">
 	import * as config from '$lib/config';
 </script>
 
-<header>
+<nav>
 	<!-- Title -->
 	<a href="/" class="title">
 		<b>{config.title}</b>
@@ -26,7 +23,7 @@
 
 	<!-- Theme -->
 	<button>Toggle</button>
-</header>
+</nav>
 
 <style>
 	nav {

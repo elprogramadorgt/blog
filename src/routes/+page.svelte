@@ -1,59 +1,52 @@
-<script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+<script lang="ts">
+	import { formatDate } from '$lib/utils';
+	import * as config from '$lib/config';
+
+	export let data;
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>{config.title}</title>
 </svelte:head>
 
+<!-- Posts -->
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
+	<ul class="posts">
+		{#each data.posts as post}
+			<li class="post">
+				<a href={post.slug} class="title">{post.title}</a>
+				<p class="date">{formatDate(post.date)}</p>
+				<p class="description">{post.description}</p>
+			</li>
+		{/each}
+	</ul>
 </section>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
+	.posts {
+		display: grid;
+		gap: 2rem;
 	}
 
-	h1 {
-		width: 100%;
+	.post {
+		max-inline-size: var(--size-content-3);
 	}
 
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
+	.post:not(:last-child) {
+		border-bottom: 1px solid var(--border);
+		padding-bottom: var(--size-7);
 	}
 
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
+	.title {
+		font-size: var(--font-size-fluid-3);
+		text-transform: capitalize;
+	}
+
+	.date {
+		color: var(--text-2);
+	}
+
+	.description {
+		margin-top: var(--size-3);
 	}
 </style>
