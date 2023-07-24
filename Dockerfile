@@ -9,7 +9,7 @@ WORKDIR /app
 
 
 COPY . .
-RUN pnpm
+RUN pnpm i
 RUN pnpm build
 
 FROM node:18.17-alpine as deploy
@@ -18,9 +18,11 @@ WORKDIR /app
 
 RUN rm -rf ./*
 
+ENV PROTOCOL_HEADER="x-forwarded-proto"
+ENV HOST_HEADER="x-forwarded-host node build"
+
 COPY --from=build /app/package.json .
 COPY --from=build /app/build .
-RUN pnpm --prod
 
 
-CMD ["node","-r dotenv/config build"]
+CMD ["node","-r", "dotenv/config","build"]
