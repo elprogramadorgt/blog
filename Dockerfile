@@ -3,9 +3,10 @@ FROM node:18.17-alpine as build
 
 WORKDIR /app
 
+RUN npm i -g pnpm
 COPY . .
-RUN yarn
-RUN yarn build
+RUN pnpm
+RUN pnpm build
 
 FROM node:18.17-alpine as deploy
 
@@ -15,7 +16,7 @@ RUN rm -rf ./*
 
 COPY --from=build /app/package.json .
 COPY --from=build /app/build .
-RUN yarn --prod
+RUN pnpm --prod
 
 
 CMD ["node","-r dotenv/config build"]
