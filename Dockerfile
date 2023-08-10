@@ -8,7 +8,9 @@ FROM base as build
 WORKDIR /app
 
 
+COPY .env .env
 COPY . .
+
 RUN pnpm i
 RUN pnpm build
 
@@ -25,4 +27,4 @@ COPY --from=build /app/package.json .
 COPY --from=build /app/build .
 
 
-CMD ["node","-r", "dotenv/config","build"]
+CMD ["node","index.js"]
