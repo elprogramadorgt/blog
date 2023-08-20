@@ -1,38 +1,26 @@
-# create-svelte
+# ElProgramadorGT Blog
+
+
+Hola este es el repo del blog que tengo publicado en mi sitio [`https://elprogramdorgt.fun`](http://elprogramadorgt.fun).
+
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-## Creating a project
+## Docker Deployment
 
-If you're seeing this, you've probably already done this step. Congrats!
+Para crear la imagen de docker utilizamos el siguiente comando
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+> En mi caso mi imagen se llama elprogramadorgt, pero le puedes poner el nombre que quieras.
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+docker build . -t elprogramadorgt/blog
 ```
 
-## Building
 
-To create a production version of your app:
+Y para iniciar el docker, ejecutamos el siguiente comando.
+
+el puerto publicado es el 3000, pero se lo puedes cambiar en el Dockerfile si tienes otro de preferencia o simplemente cambiar el host port.
 
 ```bash
-npm run build
+docker run -p 3000:3000 -d --name blog elprogramadorgt/blog
 ```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
