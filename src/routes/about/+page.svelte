@@ -1,26 +1,47 @@
+<script>
+	import logo from "$lib/images/eduLogo.webp";
+	import { Twitch, Instagram, Twitter, Youtube } from "lucide-svelte";
+</script>
+
 <svelte:head>
 	<title>About</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
 
-<div class="text-column">
-	<h1>About this app</h1>
+<main class="pb-10 mx-auto">
+	<section class="flex items-center flex-col">
+		<h1 class="text-4xl font-bold text-blue-700 mb-4">Hallo soy Edu :)</h1>
 
-	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
+		<img src={logo} alt="logo canal" width="200" height="150" />
+		<p class="mt-4">
+			Streamer de Twitch, FullStack Developer en technologias basadas en
+			Javascript.
+		</p>
 
-	<pre>npm create svelte@latest</pre>
+		<p class="mt-4">
+			Desde julio de 2023, empece a trabar con microfrontends en react,
+			module federation y jotai para el state manager.
+		</p>
+		<p class="mt-4">
+			Espero aprendas mucho de mis experiencias y te ayuden a mejorar cada
+			dia!
+		</p>
 
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
+		<div class="flex flex-row gap-x-4">
+			<a href="https://www.twitch.tv/elprogramadorgt">
+				<Twitch size="48" color="#8b44f7" /></a
+			>
 
-	<p>
-		The <a href="/sverdle">Sverdle</a> page illustrates SvelteKit's data loading and form handling. Try
-		using it with JavaScript disabled!
-	</p>
-</div>
+			<a href="https://x.com/elprogramadorgt">
+				<Twitter size="48" color="#1d9bf0" />
+			</a>
+
+			<a href="https://instagram.com/elprogramadorgt">
+				<Instagram size="48" color="#f57d03" />
+			</a>
+			<a href="https://www.youtube.com/@elprogramadorgt">
+				<Youtube size="48" color="#ff0101" />
+			</a>
+		</div>
+	</section>
+</main>
