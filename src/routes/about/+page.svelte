@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import logo from "$lib/images/eduLogo.webp";
 	import { Twitch, Instagram, Twitter, Youtube } from "lucide-svelte";
 </script>
