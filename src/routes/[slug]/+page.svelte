@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { formatDate } from '$lib/utils';
-	import Counter from '../Counter.svelte';
 	export let data: any;
 </script>
 
@@ -10,25 +9,36 @@
 	<meta property="og:title" content="data.meta.title" />
 </svelte:head>
 
-<article>
-	<hgroup>
-		<h1>{data.meta.title}</h1>
-		<p>Publicado {formatDate(data.meta.date)}</p>
-	</hgroup>
+<article class="container">
+	<div class="blog-header">
+		<hgroup>
+			<h1>{data.meta.title}</h1>
+			<p>Publicado {formatDate(data.meta.date)}</p>
+		</hgroup>
+	
+		<div class="tags">
+			{#each data.meta.categories as category}
+				<span class="surface-4">&num;{category}</span>
+			{/each}
+		</div>
 
-	<div class="tags">
-		{#each data.meta.categories as category}
-			<span class="surface-4">&num;{category}</span>
-		{/each}
 	</div>
+
 
 	<div class="prose">
 		<svelte:component this={data.content} />
 	</div>
+
+	<div class="prose">
+		<p>This is a paragraph.</p>
+		<div>
+			<p>This is another paragraph.</p>
+		</div>
+	</div>
 </article>
 
 <style>
-	article {
+	.blog-header {
 		max-inline-size: var(--size-content-3);
 		margin-inline: auto;
 	}
@@ -52,4 +62,5 @@
 		padding: var(--size-2) var(--size-3);
 		border-radius: var(--radius-round);
 	}
+	
 </style>
