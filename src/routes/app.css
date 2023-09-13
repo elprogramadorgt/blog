@@ -163,3 +163,8 @@ li {
     border-radius: 8px;
     tab-size: 2;
 }
+
+:where(p) {
+	text-wrap: pretty;
+	max-inline-size: initial;
+}
