@@ -11,6 +11,7 @@
 
 <div class="layout">
 	<!-- Header -->
+	<p class="mb-3 text-gray-500 dark:text-gray-400 block">Hola a todos, como bien saben nuestra apliación de EduQuest esta hecha en Flutter y la autenticación de usuarios es con una cuenta de Gmail.</p>
 	<Header />
 
 	<!-- Black hole for other content -->
@@ -34,9 +35,4 @@
 		padding-block: var(--size-9);
 	}
 
-	@media (min-width: 1440px) {
-		.layout {
-			padding-inline: 0;
-		}
-	}
 </style>
