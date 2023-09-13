@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as config from '$lib/config';
+	import * as config from "$lib/config";
 </script>
 
 <!-- Footer -->
@@ -9,6 +9,7 @@
 
 <style>
 	footer {
+		margin-top: 60px;
 		padding-block: var(--size-7);
 		border-top: 1px solid var(--border);
 	}
