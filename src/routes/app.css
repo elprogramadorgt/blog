@@ -91,10 +91,6 @@ html {
     --border: var(--border-light);
 }
 
-html,
-body {
-    height: 100%;
-}
 
 html {
     color: var(--text-1);
@@ -102,6 +98,14 @@ html {
     background-image: var(--background);
     background-attachment: fixed;
 }
+
+h1 {
+    line-height: var(--font-lineheight-1);
+    font-size: var(--font-size-fluid-3);
+    font-weight: var(--font-weight-9);
+    font-family: var(--font-serif);
+}
+
 
 img {
     border-radius: var(--radius-3);
@@ -165,11 +169,15 @@ li {
 }
 
 :where(p) {
-    text-wrap: pretty;
     max-inline-size: initial;
 }
 
-.prose>pre {
-    word-wrap: break-word !important;
-    background-color: blueviolet !important;
+
+:where(h1) {
+    max-inline-size: initial;
+}
+
+.prose>pre>code>span {
+    word-wrap: break-word;
+    white-space: pre-wrap;
 }
