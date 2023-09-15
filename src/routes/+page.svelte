@@ -38,8 +38,11 @@
 	}
 
 	.title {
-		font-size: var(--font-size-fluid-3);
 		text-transform: capitalize;
+		line-height: var(--font-lineheight-9);
+		font-size: var(--font-size-fluid-2);
+		/* font-weight: var(--font-weight-5); */
+		font-family: var(--font-serif);
 	}
 
 	.date {
