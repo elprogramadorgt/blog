@@ -1,0 +1,24 @@
+---
+title: 01 HTMX Go
+description: First Linux Post
+date: '2023-09-24T00:00:00'
+categories: 
+    - sveltekit
+    - Svelte
+    - dendri
+    - kasuma
+    - faith
+published: true
+---
+
+## Markdown
+
+
+Que tal
+
+
+```ts
+function sayHI(){
+    console.log(`Hey ${name}! 👋`)
+}
+```

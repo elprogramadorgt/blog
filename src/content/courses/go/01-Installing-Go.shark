@@ -1,0 +1,24 @@
+---
+title: 01 Installing Golang in Linux
+description: First go post
+date: '2023-07-08T00:00:00'
+categories: 
+    - sveltekit
+    - Svelte
+    - dendri
+    - kasuma
+    - faith
+published: true
+---
+
+## Markdown
+
+
+Que tal
+
+
+```ts
+function sayHI(){
+    console.log(`Hey ${name}! 👋`)
+}
+```
