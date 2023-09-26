@@ -15,7 +15,7 @@
 		</li>
 
 		<li>
-			<a href="/cursos">Cursos</a>
+			<a href="/courses">Cursos</a>
 		</li>
 
 		<li>

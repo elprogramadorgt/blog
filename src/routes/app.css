@@ -177,6 +177,27 @@ li {
     max-inline-size: initial;
 }
 
+:where(li,dd,figcaption) {
+    max-inline-size: initial;
+}
+
+/* POSTS */
+.post:not(:last-child) {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: var(--size-7);
+}
+
+.post-title {
+    text-transform: capitalize;
+    line-height: var(--font-lineheight-9);
+    font-size: var(--font-size-fluid-2);
+    font-family: var(--font-serif);
+}
+
+.date {
+    color: var(--text-2);
+}
+
 .prose>pre>code>span {
     word-wrap: break-word;
     white-space: pre-wrap;
