@@ -12,7 +12,13 @@ async function getCourses() {
     const parts = directoryPath.split("/");
     const name = parts.pop();
     return { name, slug: name };
-  });
+  }).reduce((acc: any, item: any) => {
+    if (!acc.some((obj: any) => obj.slug === item.slug)) {
+      acc.push(item);
+    }
+    return acc;
+  }, []);;
+
 }
 
 export async function GET() {
