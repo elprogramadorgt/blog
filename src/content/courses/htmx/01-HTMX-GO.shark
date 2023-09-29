@@ -2,6 +2,7 @@
 title: 01 HTMX Go
 description: First Linux Post
 date: '2023-09-24T00:00:00'
+url: '/courses/htmx/'
 categories: 
     - sveltekit
     - Svelte

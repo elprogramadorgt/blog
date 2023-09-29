@@ -2,6 +2,7 @@
 title: Aprendiendo HTXM Parte 2
 description: Second HTMX course
 date: '2023-09-25T00:00:00'
+url: '/courses/htmx/'
 categories: 
     - sveltekit
     - Svelte
@@ -58,8 +59,9 @@ La diferencia entre intersect y revealed es que intersect se ejecuta cuando se h
 Al parecer podemos utilizar eventos custom para lanzar requests.(Pero hasta el momento no se como XDDD perdón, espero poder explicarlo en futuros episodios)
 
 ```html
-<button hx-get="http://localhost:8080/alert" hx-trigger="revealed" class="text-white bg-fuchsia-800"
->Estoy aqui
+<button hx-get="http://localhost:8080/alert" hx-trigger="revealed" 
+    class="text-white bg-fuchsia-800">
+    Estoy aqui
 </button>
 ```
 

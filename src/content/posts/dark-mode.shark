@@ -4,6 +4,7 @@
 title: Dark reader plugin
 description: Mi plugin para dark reader.
 date: '2023-09-01T00:00:00'
+url: '/posts/'
 categories: 
     - browser
     - dark
