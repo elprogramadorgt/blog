@@ -1,0 +1,66 @@
+---
+title: Aprendiendo HTXM Parte 2
+description: Second HTMX course
+date: '2023-09-25T00:00:00'
+categories: 
+    - sveltekit
+    - Svelte
+    - dendri
+    - kasuma
+    - faith
+published: true
+---
+
+# Aprendiendo HTXM Parte #2
+
+## Trigger Filters
+
+Veamos primero el código
+
+```html
+<div hx-get="/clicked" hx-trigger="click[ctrlKey]">
+    Control Click Me
+</div>
+```
+
+Como podemos ver, tenemos amarrado el evento click y dentro de los `square brackets []` tenemos la tecla que debemos presionar, en este caso es la tecla control.
+
+`
+Yo probe con alt y con esc y no funciono XDDD
+me funciono con shift. Aclaro !!!
+`
+
+
+Si necesitas anidar teclas lo puedes hacer de la siguiente forma:
+```html
+<div hx-get="/clicked" hx-trigger="click[ctrlKey&&shiftKey]">
+    Control Click Me
+</div>
+```
+
+`
+Ojo: Las propiedades como ctrlKey se resolverán primero contra el evento desencadenante. Esto quiere decir teclas como tab, alt que tienen acciones especificas dentro del explorador se ejecutaran antes, es decir que no va a realizar el evento asignado en el hx-trigger.
+`
+
+
+## Special Events
+
+HTXM provee algunos eventos especials para utilizarlso con hx-trigger
+    * load: Se ejecuta una vez cuando el elemento carga en la pagina web.
+    * revealed: Se ejecuta una vez cuando el elemento aparece en el viewport (lo que usuario ve en el explorador)
+    * intersect: Se ejecuta cuando un un elemento se intersecta con el viewport. 
+        Tiene 2 opciones adicionales:
+        1. root:<selector> - un selector css del elemento raiz para la interseccion.
+        2. threshold:<float> - un numero flotante entre 0.0 y 1.1 que indica la que cantidad de interseccion debe ocurrir para que se dispare el evento.
+
+
+La diferencia entre intersect y revealed es que intersect se ejecuta cuando se hace scroll sobre el elemento mientra reveald funciana para el resto de eventos, por ejemplo: sea visible en modal, cargando una lista, un evento hover, etc. 
+
+Al parecer podemos utilizar eventos custom para lanzar requests.(Pero hasta el momento no se como XDDD perdón, espero poder explicarlo en futuros episodios)
+
+```html
+<button hx-get="http://localhost:8080/alert" hx-trigger="revealed" class="text-white bg-fuchsia-800"
+>Estoy aqui
+</button>
+```
+
