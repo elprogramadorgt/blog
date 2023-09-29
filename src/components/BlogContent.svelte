@@ -18,7 +18,7 @@
 
     <div class="tags text-center">
       {#each data.meta.categories as category}
-        <span class="surface-4">&num;{category}</span>
+        <span class="surface-4 m-4">&num;{category}</span>
       {/each}
     </div>
   </div>
