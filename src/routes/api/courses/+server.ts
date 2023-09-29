@@ -11,13 +11,14 @@ async function getCourses() {
     const directoryPath = path.replace(/\/[^/]+\.shark$/, "");
     const parts = directoryPath.split("/");
     const name = parts.pop();
-    return { name, slug: name };
+    return { name, slug: name, url: `courses/` };
   }).reduce((acc: any, item: any) => {
     if (!acc.some((obj: any) => obj.slug === item.slug)) {
       acc.push(item);
     }
     return acc;
-  }, []);;
+  }, []);
+
 
 }
 
