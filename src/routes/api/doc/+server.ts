@@ -1,24 +1,15 @@
 import { json } from '@sveltejs/kit'
 import type { Post } from '$lib/types'
-import { getDocumentMetadata } from '$lib/utils/document'
+import { getDocuments } from '$lib/utils/document'
 
 
 async function getDocs() {
 
-    let posts: Post[] = []
+
 
     const paths = import.meta.glob('/src/content/**/*.shark', { eager: true })
 
-    for (const path in paths) {
-        const file = paths[path];
-        const slug = path.split('/').at(-1)?.replace('.shark', '')
-
-        const doc = getDocumentMetadata(file, slug)
-
-        if (!!doc) {
-            posts.push(doc)
-        }
-    }
+    let posts: Post[] = getDocuments(paths);
 
     posts = posts.sort((first: Post, second: Post) => new Date(second.date).getTime() - new Date(first.date).getTime())
 

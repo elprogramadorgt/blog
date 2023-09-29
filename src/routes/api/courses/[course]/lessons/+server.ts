@@ -1,5 +1,5 @@
 import type { Post } from "$lib/types";
-import { getDocumentMetadata } from "$lib/utils/document";
+import { getDocuments } from "$lib/utils/document";
 import { json } from "@sveltejs/kit";
 
 async function getClases(course: string) {
@@ -22,23 +22,13 @@ async function getClases(course: string) {
       break;
   }
 
-  let posts: Post[] = [];
-
-  for (const path in paths) {
-    const file = paths[path];
-    const slug = course + "/" + path.split("/").at(-1)?.replace(".shark", "");
-
-    const doc = getDocumentMetadata(file, slug);
+  let posts: Post[] = getDocuments(paths);
 
 
-    if (!!doc) {
-      posts.push(doc);
-    }
-  }
 
   posts = posts.sort(
     (first: Post, second: Post) =>
-      new Date(second.date).getTime() - new Date(first.date).getTime()
+      new Date(first.date).getTime() - new Date(second.date).getTime()
   );
 
   return posts;

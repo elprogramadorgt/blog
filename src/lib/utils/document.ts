@@ -13,3 +13,22 @@ export function getDocumentMetadata(file: any, slug: string | undefined) {
     }
     return false
 }
+
+export function getDocuments(paths: Record<string, unknown>) {
+
+    const data = [];
+    for (const path in paths) {
+        const file = paths[path];
+        const slug = path.split('/').at(-1)?.replace('.shark', '')
+
+        const doc = getDocumentMetadata(file, slug)
+
+
+        if (!!doc) {
+            data.push(doc)
+        }
+    }
+
+    return data;
+
+}
