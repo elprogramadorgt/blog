@@ -1,0 +1,28 @@
+---
+title: Configurando el clipboard en nvim
+description: Cómo configurar clipboard en nvim para pegar lo que copies en otra terminal
+date: '2023-10-06T00:00:00'
+url: '/posts/'
+categories: 
+    - nvim
+    - clipboard
+    - xclip
+published: true
+---
+
+Siempre que trabajo con nvim utilizo el yank y el paste para mover mi codigo de un archivo a otro.
+
+Tengo harpoon instalado para moverme entre los archivos de forma rápida y no había tenido el problema hasta AHORA!!.
+
+
+Estaba en stream, de hecho esto lo estoy escribiendo en pleno stream XDDD.
+
+y quería copiar la estructura de una tabla en otra terminal y fue un caos total :sad:
+
+
+Para solucionar este problema solo tienes que hacer 2 cosas:
+
+1. Agregar una fucking linea en tu archivo init de configuracion o en algun otro modulo.
+2. Reiniciar. Siempre, siempre, siempre!!! de verdad siempre... reinicien jajajaj parece chiste pero es anectota. pase literal como 40 minutos tratando y solo tenía que reiniciar.
+
+RTFM
