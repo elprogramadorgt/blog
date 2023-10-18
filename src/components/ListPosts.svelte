@@ -1,7 +1,6 @@
 <script lang="ts">
     import { formatDate } from "$lib/utils.js";
     export let posts: any;
-    console.log("postsssss", posts);
 </script>
 
 <ul class="posts grid gap-8">
