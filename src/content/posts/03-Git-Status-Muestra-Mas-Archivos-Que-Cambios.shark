@@ -1,0 +1,21 @@
+---
+title: Cambios en git status pero no en git diff
+description: First Post
+date: '2023-10-02T00:00:00'
+url: '/posts/'
+categories: 
+    - git
+    - permissions
+    - permisos
+published: true
+---
+
+Esta semana estuve trabajando en una app web y una amigo me dijo "Ey crack yo te puedo ayudar en la la UI" y yo dije `KOOOMOOOO` me sentí ofendido la verdad XDDDDDD.
+
+Bueno el punto es que me estaba ayudando pero por alguna razón no podía acceder a su github entonces le pase el proyecto en un zip (se que no es buena práctica pero pues... es lo que hay viejo) y justo cuando termino y agregue sus archivos a mi código que tenía en git.
+
+y OH Sorpresa! 36 cambios 😟 
+
+![Javatpoint](/posts/03/git_changes.png)
+
+Pero 
