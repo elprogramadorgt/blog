@@ -1,19 +1,18 @@
 ---
-title: Aprendiendo HTXM Parte 2
+title: 02 Aprendiendo HTXM
 description: Second HTMX course
 date: '2023-09-25T00:00:00'
 url: '/courses/htmx/'
 categories: 
-    - sveltekit
-    - Svelte
-    - dendri
-    - kasuma
-    - faith
+    - htmx
+    - go
+    - esp
+
 published: true
 ---
 
 
-##Trigger Filters
+## Trigger Filters
 
 Veamos primero el código
 
