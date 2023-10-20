@@ -24,3 +24,13 @@ el puerto publicado es el 3000, pero se lo puedes cambiar en el Dockerfile si ti
 ```bash
 docker run -p 3000:3000 -d --name blog elprogramadorgt/blog
 ```
+
+
+## Docker compose
+
+El blog yo lo tengo desplegado en docker compose entonces cuando subo un cambio a la imagen solo debes ejecutar estos compandos.
+
+```bash
+docker-compose pull
+docker-compose up -d
+```
