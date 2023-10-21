@@ -1,0 +1,132 @@
+---
+title: 03 Aprendiendo HTXM
+description: Aprendiendo a utilizar polling y request indicators
+date: '2023-10-20T00:00:00'
+url: '/courses/htmx/'
+categories: 
+    - htmx
+    - go
+    - esp
+
+published: true
+---
+
+
+## Polling 
+
+Si tu aplicación necesita realizar una petición a un endpoint de manera repetida puedes utilizar la syntaxis `every` seguido de el tiempo, todo eso dentro de el hx-trigger.
+
+Eg.
+
+```html
+<div hx-get="/feed" hx-trigger="every 2s"></div>
+
+<div hx-get="http://localhost:8080/feed" hx-trigger="every 2s" hx-target="#feed"></div>
+<div id="feed">
+
+</div>
+```
+
+En este caso le estamos diciendo que haga el request a /news cada 2 segundos. Esto lo adaptar dependiendo la necesidad de la aplicación.
+
+
+Algo que me llamo la atención es que si en algun momento necesitas detener los request puedes responder un status code 286 y de esta forma HTMX detendra el every y ya recibir más peticiones.
+
+Asi lo puedes mandar desde el backend: 
+
+```go
+c.HTML(286, "feed.html", gin.H{
+    "feed":feed,
+})
+
+```
+
+## Load Polling
+
+El load polling se utiliza cuando quieres esperar a que un elemento carge en el DOM y después realizar una request.
+
+```html
+<div hx-get="http://localhost:8080/feed" hx-trigger="load delay:3s"
+hx-target="#feed2"></div>
+
+<div id="feed2">
+</div>
+```
+
+
+si deseas que el tag se sustituya puedes utilizar el hx-swap
+
+
+```html
+<div hx-get="/feed"
+    hx-trigger="load delay:1s"
+    hx-swap="outerHTML"
+>
+</div>
+```
+
+Si deseas que funcione como el every, debes retornar el mismo tag desde el html entonces se crea un ciclo infinito porque vas a recibir el mismo div y ese div espera un 1 segundo, vuelve a hacer el request y recibe el mismo elemento y vuelve a esperar un segundo y realiza el request y recibe el mismo elemento....... XDDDDDDD
+
+
+y así sucesivamente, perdón que te hice leer de más pero era para explicar como funcionaba el bucle.
+
+
+
+## Request Indicators
+
+Cuando realizas un request es importante hacerle saber al usuario que la aplicación esta esperando por una respuesta del servidor.
+
+Esto lo podemos lograr en HTMX utilizando la clase `htmx-indicator`.
+
+
+```html
+<button  hx-get="http://localhost:8080/indicator">
+        Click Me!
+        <img class="htmx-indicator" src="/loading.gif">
+</button> 
+```
+
+La clase htxm-indicator esta definida para que la opacidad de los elementos con esta clase sea 0 por default (Esto significa que no va a ser visible) haciendolo invisible pero presente en el DOM.
+
+Cuando HTMX hace un request, agrega la clase `htmx-request` al elemento que hace el request u otro elemento especificado.
+
+La clase htmx-request causa que los elementos child que contengan la clase htmx-indicateor hagan una transición a una opcidad 1 haciendo que el elmento sea visible.
+
+
+HTMX te permite modficar el comportamiento del indicador utilizando CSS.
+
+Aqui te muestro un ejemplo:
+
+Vamos a declarar una clase llamada  `my-indicator` esto lo puedes cambiar por cualquier otro nombre.
+
+```css
+.my-indicator{
+    display:none;
+}
+
+.htmx-request.my-indicator{
+    border-radius: 50%;
+    display:inline;
+    z-index: 1000;
+    display:flex;
+}
+
+```
+
+
+y en el HTML escribes el siguiente código.
+
+```html
+<div>
+    <button hx-get="http://localhost:8080/indicator" hx-indicator="#indicator">
+        Click Me!
+    </button>
+    <img id="indicator" class="my-indicator" src="/loading.gif"/>
+</div>
+```
+
+En este caso le estamos diciendo que cuando se haga click en el botón la lógica del hx-indicator lo aplique al elemento con el ID "indicator".
+
+Luego aplica las reglas de la clase .my-indicator y cuando tu haces click como mencion antes agrega la clase .htmx-request haciendo que se aplique la segunda regla de css que agregamos.
+ 
+y de esta manera ya puedes adaptar el loading indicator en tu aplicación.
