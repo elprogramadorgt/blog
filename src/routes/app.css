@@ -209,3 +209,9 @@ li {
     white-space: pre-wrap;
 
 }
+
+.prose>pre {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
