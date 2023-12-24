@@ -4,25 +4,26 @@ description: First Post
 date: '2023-07-08T00:00:00'
 url: '/posts/'
 categories: 
-    - sveltekit
-    - Svelte
-    - dendri
-    - kasuma
-    - faith
+    - ios
+    - iphone
+    - flutter
+    - eduquest
+    - google
+	- firebase
 published: true
 ---
 
 Hola a todos, como bien saben nuestra apliación de EduQuest esta hecha en Flutter y la autenticación de usuarios es con una cuenta de Gmail.
 
-La aplicación en android funcionó sin mayor problema, pero cuando intentamos compilarla en Xcode nos topamos con este error:
+La aplicación en android funcionó sin mayor problema, pero cuando intentamos compilarla en Xcode aparecio  este error:
 <br>
 
 ```shell
 2023-09-10 09:28:56.460388-0600 Runner[9754:519625] Metal API Validation Enabled
 2023-09-10 09:28:56.611772-0600 Runner[9754:519625] [VERBOSE-2:FlutterDarwinContextMetalImpeller.mm(35)] Using the Impeller rendering backend.
 2023-09-10 09:28:56.658153-0600 Runner[9754:519862] 10.9.0 - [FirebaseCore][I-COR000005] No app has been configured yet.
-2023-09-10 09:28:56.665745-0600 Runner[9754:519905] flutter: The Dart VM service is listening on http://127.0.0.1:58605/HLBvsBaEZOs=/
-2023-09-10 09:28:56.669226-0600 Runner[9754:519862] 10.9.0 - [FirebaseMessaging][I-FCM001000] FIRMessaging Remote Notifications proxy enabled, will swizzle remote notification receiver handlers. If you'd prefer to manually integrate Firebase Messaging, add "FirebaseAppDelegateProxyEnabled" to your Info.plist, and set it to NO. Follow the instructions at:
+2023-09-10 09:28:56.665745-0600 Runner[9754:519905] flutter: The Dart VM service is listening on http://127.0.0.1:77777/HLBvsBaEZOs=/
+2023-09-10 09:28:56.669226-0600 Runner[9754:519862] 10.9.0 - [FirebaseMessaging][I-FCM001000] FIRMessaging Remote Notifications proxy enabled, will swizzle remote notification receiver handlers. If you\'d prefer to manually integrate Firebase Messaging, add "FirebaseAppDelegateProxyEnabled" to your Info.plist, and set it to NO. Follow the instructions at:
 https://firebase.google.com/docs/cloud-messaging/ios/client#method_swizzling_in_firebase_messaging
 to ensure proper integration.
 2023-09-10 09:28:56.679282-0600 Runner[9754:519625] no valid “aps-environment” entitlement string found for application
@@ -31,8 +32,8 @@ to ensure proper integration.
 2023-09-10 09:28:57.095571-0600 Runner[9754:519912] [connection] nw_connection_copy_connected_local_endpoint_block_invoke [C3] Client called nw_connection_copy_connected_local_endpoint on unconnected nw_connection
 2023-09-10 09:28:57.095616-0600 Runner[9754:519912] [connection] nw_connection_copy_connected_remote_endpoint_block_invoke [C3] Client called nw_connection_copy_connected_remote_endpoint on unconnected nw_connection
 2023-09-10 09:28:57.095665-0600 Runner[9754:519912] [connection] nw_connection_copy_protocol_metadata_internal_block_invoke [C3] Client called nw_connection_copy_protocol_metadata_internal on unconnected nw_connection
-2023-09-10 09:28:57.464592-0600 Runner[9754:519885] flutter: Registration Token=cjWyui3LQ046r6AYt4OBSW:APA91bF2CjbpQvLejZ-nBxydmTHzPMx_ywaa43EubjiLzf1hagzuztkBAmJACg8HYNJigCpKx0ytKL9aLWOAz8z19WdPP2TLYzNQ29sQKusFFybeuYI_MvAnAWK0BILDw0OfLIQ-I-03
-2023-09-10 09:29:00.012017-0600 Runner[9754:519885] [VERBOSE-2:dart_vm_initializer.cc(41)] Unhandled Exception: PlatformException(google_sign_in, Your app is missing support for the following URL schemes: com.googleusercontent.apps.569945111547-t05cvmq48m8f6di6adnacmt9qmbpsag5, NSInvalidArgumentException, null)
+2023-09-10 09:28:57.464592-0600 Runner[9754:519885] flutter: Registration 
+2023-09-10 09:29:00.012017-0600 Runner[9754:519885] [VERBOSE-2:dart_vm_initializer.cc(41)] Unhandled Exception: PlatformException(google_sign_in, Your app is missing support for the following URL schemes: com.googleusercontent.apps.59988387237-sd34asd87fas98d7fas87df6, NSInvalidArgumentException, null)
 #0      StandardMethodCodec.decodeEnvelope (package:flutter/src/services/message_codecs.dart:652:7)
 #1      MethodChannel._invokeMethod (package:flutter/src/services/platform_channel.dart:310:18)
 <asynchronous suspension>
@@ -42,7 +43,7 @@ to ensure proper integration.
 <asynchronous suspension>
 #4      GoogleSignIn.signIn.isCanceled (package:google_sign_in/google_sign_in.dart:431:5)
 <asynchronous suspension>
-2023-09-10 09:29:00.016432-0600 Runner[9754:519625] *** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: 'Your app is missing support for the following URL schemes: com.googleusercontent.apps.569945111547-t05cvmq48m8f6di6adnacmt9qmbpsag5'
+2023-09-10 09:29:00.016432-0600 Runner[9754:519625] *** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: 'Your app is missing support for the following URL schemes: com.googleusercontent.apps.59988387237-t05cvmqasd87fas98d7fas87df6'
 *** First throw call stack:
 (
 	0   CoreFoundation                      0x0000000180437330 __exceptionPreprocess + 172
@@ -72,3 +73,41 @@ libc++abi: terminating due to uncaught exception of type NSException
 
 ```
 
+
+> Mi recomendación cuando tenemos errores así es leerlos un par de veces linea por linea, esto ayuda a tener una mejor idea de cual puede ser el problema y realizar una mejor busqueda en internet o tener una mejor platica con ChatGPT y  solucionar el problema rápido y sin tanta cosa XDDD.
+
+Este error literalmente nos dice como solucionarlo. y la respuesta esta aquí.
+
+```shell
+PlatformException(google_sign_in, Your app is missing support for the following URL schemes: com.googleusercontent.apps.59988387237-sd34asd87fas98d7fas87df6, NSInvalidArgumentException, null)
+```
+
+Esto se arregla super fácil, lo pueden hacer desde vi, vim, nvim, sublimetext, notepad, notepad++ y pues VSCode XDDD.
+
+Dentro de nuestra app Flutter nos vamos a la carpeta `ios/Runner` y abrimos el archivo llamado `Info.plist`.
+
+Este es un archivo XML, entonces, debemos buscar el primer tag `<dict>` y agregamos el siguiente código:
+
+```shell
+
+<key>CFBundleURLTypes</key>
+<array> 
+ <dict>
+  
+        <key>CFBundleURLSchemes</key>
+        <array>
+            <string>com.googleusercontent.apps.59988387237-sd34asd87fas98d7fas87df6</string>
+        </array>
+    </dict>
+</array>
+
+```
+El valor se obtiene del mensaje de error, entonces solo debes sustituirlo por el que se muestra en tu consola.
+
+y listo, eso es todo, espero hayas podido solucionar el error.
+
+Caso contrario, les dejo el discord de la comunidad, tenemos un canal de ayuda.
+
+<br>	
+
+[Discord](https://discord.com/invite/C5GcN3k9P9)
