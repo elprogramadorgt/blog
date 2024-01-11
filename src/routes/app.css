@@ -109,6 +109,20 @@ h1 {
   font-family: var(--font-serif);
 }
 
+h2 {
+  line-height: var(--font-lineheight-1);
+  font-size: var(--font-size-fluid-2);
+  font-weight: var(--font-weight-6);
+  font-family: var(--font-serif);
+}
+
+h3 {
+  line-height: var(--font-lineheight-1);
+  font-size: var(--font-size-fluid-1);
+  font-weight: var(--font-weight-9);
+  font-family: var(--font-serif);
+}
+
 img {
   border-radius: var(--radius-3);
 }
