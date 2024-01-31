@@ -16,7 +16,7 @@
       <p>Publicado {formatDate(data.meta.date)}</p>
     </hgroup>
 
-    <div class="tags text-center">
+    <div class="tags mb-8 text-center">
       {#each data.meta.categories as category}
         <span class="surface-4 m-4">&num;{category}</span>
       {/each}
@@ -35,10 +35,12 @@
   }
 
   .tags {
+  
     margin-top: var(--size-7);
   }
 
   .tags > * {
+    background-color: #512b92;
     padding: var(--size-2) var(--size-3);
     border-radius: var(--radius-round);
   }
