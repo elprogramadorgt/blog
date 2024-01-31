@@ -9,10 +9,8 @@ categories:
     - flutter
     - google
     - firebase
-	
 published: true
 ---
-
 Hola a todos, como bien saben nuestra apliación de EduQuest esta hecha en Flutter y la autenticación de usuarios es con una cuenta de Gmail.
 
 La aplicación en android funcionó sin mayor problema, pero cuando intentamos compilarla en Xcode aparecio  este error:
