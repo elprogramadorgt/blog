@@ -4,12 +4,131 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Light mode variables */
+  --bg-color: #fafafa;
+  --text-color: #2d3748;
+  --accent-color: #4c51bf;
+  --secondary-accent-color: #f6ad55;
+  --tertiary-color: #68d391;
+  --border-color: #e2e8f0; /* Light gray for subtle borders */
+
+  --card-bg-color: #f9fafb; /* Light mode card background color */
+  --card-title-color: #005b99; /* Light mode card text color */
+  --card-link: #db6d28;
+}
+
+.dark {
+  /* Dark mode variables */
+  --bg-color: #1a202c;
+  --text-color: #cbd5e0;
+  --accent-color: #667eea;
+  --secondary-accent-color: #ed8936;
+  --tertiary-color: #48bb78;
+  --border-color: #4a5568; /* Darker shade for clear separation */
+
+  --card-bg-color: #242c3a; /* Dark mode card background color */
+  --card-title-color: #4d9fec; /* Dark mode card text color */
+  --card-link: #ffa726;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+a,
+.button-primary {
+  color: var(--accent-color);
+}
+
+.button-secondary {
+  background-color: var(--secondary-accent-color);
+  color: white; /* Ensure text on buttons is legible */
+}
+
+.border-example {
+  border-color: var(--border-color);
+}
+
+.card {
+  background-color: var(--card-bg-color);
+}
+
+.card-title {
+  color: var(--card-title-color);
+}
+
+.card-link {
+  color: var(--card-link);
+  text-decoration: none; /* Optional: removes underline */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.card-link:hover,
+.card-link:focus {
+  /* color: var(--card-link-hover); */
+  text-decoration: underline; /* Optional: adds underline on hover for clarity */
+}
+
+/* body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+a,
+button {
+  color: var(--highlight-color);
+} */
+
+/* Example class using the primary color * /
+.primary-accent {
+  background-color: var(--primary-color);
+}
+
+/* :root {
+  --color-background: #0d1117;
+  --color-primary: #00ffc6;
+  --color-secondary: #0077ff;
+  --color-tertiary: #ff0077;
+  --color-neutral: #bbbbbb;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-neutral);
+  font-family: "Arial", sans-serif; /* Consider a modern, sans-serif font * /
+}
+
+a {
+  color: var(--color-primary);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+button {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--color-secondary);
+} */
+
+/*
 html {
-  /* font */
+  /* font * /
   --font-sans: "Manrope", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  /* dark */
+  /* dark * /
   --brand-dark: var(--orange-3);
   --text-1-dark: var(--gray-3);
   --text-2-dark: var(--gray-5);
@@ -21,7 +140,7 @@ html {
   --background-dark: var(--gradient-8);
   --border-dark: var(--gray-9);
 
-  /* light */
+  /* light * /
   --brand-light: var(--orange-10);
   --text-1-light: var(--gray-8);
   --text-2-light: var(--gray-7);
@@ -198,7 +317,7 @@ li {
   max-inline-size: initial;
 }
 
-/* POSTS */
+/* POSTS * /
 .post:not(:last-child) {
   border-bottom: 1px solid var(--border);
   padding-bottom: var(--size-7);
@@ -243,4 +362,4 @@ li {
 .prose > p > a {
   color: var(--link-text-1);
   text-decoration: underline;
-}
+} */
