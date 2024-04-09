@@ -3,7 +3,7 @@ title: 03 Aprendiendo HTXM
 description: Aprendiendo a utilizar polling y request indicators
 date: '2023-10-20T00:00:00'
 url: '/courses/htmx/'
-categories: 
+tags: 
     - htmx
     - go
     - esp
@@ -19,11 +19,13 @@ Si tu aplicación necesita realizar una petición a un endpoint de manera repeti
 Eg.
 
 ```html
-<div hx-get="/feed" hx-trigger="every 2s"></div>
+<div hx-get="/feed" hx-trigger="every 2s">
+</div>
 
-<div hx-get="http://localhost:8080/feed" hx-trigger="every 2s" hx-target="#feed"></div>
+<div hx-get="http://localhost:8080/feed" hx-trigger="every 2s" hx-target="#feed">
+</div>
+
 <div id="feed">
-
 </div>
 ```
 

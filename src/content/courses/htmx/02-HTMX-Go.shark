@@ -3,7 +3,7 @@ title: 02 Aprendiendo HTXM
 description: Second HTMX course
 date: '2023-09-25T00:00:00'
 url: '/courses/htmx/'
-categories: 
+tags: 
     - htmx
     - go
     - esp

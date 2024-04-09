@@ -3,7 +3,7 @@ title: Configurando el clipboard en nvim
 description: Cómo configurar clipboard en nvim para pegar lo que copies en otra terminal
 date: '2023-10-06T00:00:00'
 url: '/posts/'
-categories: 
+tags: 
     - nvim
     - clipboard
     - xclip

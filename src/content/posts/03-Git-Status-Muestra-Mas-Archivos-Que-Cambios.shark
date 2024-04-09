@@ -3,7 +3,7 @@ title: Cambios en git status pero no en git diff
 description: First Post
 date: '2023-10-02T00:00:00'
 url: '/posts/'
-categories: 
+tags: 
     - git
     - permissions
     - permisos
