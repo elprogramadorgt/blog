@@ -39,10 +39,9 @@ $: filteredPosts = data.posts.filter(post =>
       type="text" 
       bind:value={searchQuery} 
       placeholder="Search posts..." 
-      class="search-input bg-white border border-gray-300 text-gray-700 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 p-2 w-full max-w-xl"
+      class="search-input bg-white border-2 border-gray-400 text-gray-700 rounded-lg shadow-sm leading-tight focus:outline-none focus:bg-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 p-3 w-full max-w-xl transition duration-150 ease-in-out"
     >
   </div>
-
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {#each filteredPosts as post}
     <div class="card flex flex-col justify-between p-6 rounded-lg shadow-md">
