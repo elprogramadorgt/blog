@@ -1,56 +1,7 @@
 <script lang="ts">
 	import * as config from "$lib/config";
+	import Navbar from '../components/Navbar.svelte';
+
 </script>
 
-<nav>
-	<!-- Title -->
-	<a href="/" class="title">
-		<b>{config.title}</b>
-	</a>
-
-	<!-- Navigation -->
-	<ul class="links">
-		<li>
-			<a href="/blog">Blog</a>
-		</li>
-
-		<li>
-			<a href="/courses">Cursos</a>
-		</li>
-
-		<li>
-			<a href="/about">About</a>
-		</li>
-	</ul>
-
-	<!-- Theme -->
-	<button>Toggle</button>
-</nav>
-
-<style>
-	nav {
-		padding-block: var(--size-7);
-	}
-
-	.links {
-		margin-block: var(--size-7);
-	}
-
-	a {
-		color: inherit;
-		text-decoration: none;
-	}
-
-	@media (min-width: 768px) {
-		nav {
-			display: flex;
-			justify-content: space-between;
-		}
-
-		.links {
-			display: flex;
-			gap: var(--size-7);
-			margin-block: 0;
-		}
-	}
-</style>
+<Navbar />
