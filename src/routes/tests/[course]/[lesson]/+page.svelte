@@ -1,8 +1,9 @@
 <script lang="ts">
+  import confetti from 'canvas-confetti';
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
 
-  let quiz = null;
+  let quiz:any = null;
   let currentQuestionIndex = 0;
   let selectedOption = '';
   let showExplanation = false;
@@ -19,9 +20,20 @@
     }
   });
 
-  function handleOptionSelect(option) {
+  function handleOptionSelect(option:string) {
     selectedOption = option;
     showExplanation = true;
+    if (option === quiz.questions[currentQuestionIndex].answer) {
+      runConfetti();
+    }
+  }
+
+  function runConfetti() {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 } // Make sure confetti comes from the bottom of the screen
+    });
   }
 
   function nextQuestion() {
@@ -31,10 +43,11 @@
       selectedOption = '';
     } else {
       console.log('Quiz Completed');
-      // Here you could redirect to a results page or show a summary
+      // Add further actions here
     }
   }
 </script>
+
 
 <style>
   /* Container and General Layout */
@@ -149,7 +162,7 @@
 </style>
 
 
-<div>
+<div class="quiz-container">
   {#if isFetching}
     <p>Loading quiz...</p>
   {:else if quiz}
