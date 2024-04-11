@@ -1,0 +1,11 @@
+{
+	"title": "Basic Programming Quiz",
+	"questions": [
+		{
+			"question": "What is the output of `console.log('Hello, World!');`?",
+			"options": ["Hello, World!", "undefined", "Error"],
+			"answer": "Hello, World!",
+			"explanation": "This line of code prints 'Hello, World!' to the console."
+		}
+	]
+}
