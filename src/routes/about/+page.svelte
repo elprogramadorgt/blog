@@ -11,9 +11,12 @@
 </svelte:head>
 
 
-<Navbar />
 <main class="container mx-auto px-4 py-8">
-  <h1 class="title-color text-3xl font-heading mb-4">Hola! :)</h1>
+  <div class="flex items-center flex-col">
+	<h1 class="text-4xl font-bold mb-4 about-title" >Hola! :)</h1>
+
+  </div>
+  
   <div class="card-bg p-6 rounded-lg ">
     <p class="text-color-primary mb-4">
 	  En este blog, encontrarás una variedad de temas relacionados con programación y ciberseguridad. Además, tenemos cursos donde podrás aprender y poner a prueba tus conocimientos con nuestros tests.
@@ -58,7 +61,7 @@
 
   </div>
 </main>
-<Footer />
+
 <!-- <main class="pb-10 mx-auto">
 	<section class="flex items-center flex-col">
 		<h1 class="text-4xl font-bold text-blue-700 mb-4">Hallo soy Edu :)</h1>
