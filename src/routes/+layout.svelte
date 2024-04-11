@@ -9,9 +9,10 @@
   import "./app.css";
 </script>
 
+<Header />
 <div class="container mx-auto">
   <!-- Header -->
-  <Header />
+
 
   <!-- Black hole for other content -->
   <slot />
