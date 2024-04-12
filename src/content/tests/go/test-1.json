@@ -1,11 +1,17 @@
 {
-	"title": "Basic Programming Quiz",
-	"questions": [
-		{
-			"question": "What is the output of `console.log('Hello, World!');`?",
-			"options": ["Hello, World!", "undefined", "Error"],
-			"answer": "Hello, World!",
-			"explanation": "This line of code prints 'Hello, World!' to the console."
-		}
-	]
+  "title": "Basic Programming Quiz",
+  "questions": [
+    {
+      "question": "What is the output of `console.log('Hello, World!');`?",
+      "options": ["Hello, World!", "undefined", "Error"],
+      "answer": "Hello, World!",
+      "explanation": "This line of code prints 'Hello, World!' to the console."
+    },
+    {
+      "question": "Second question?",
+      "options": ["Hello, World!", "AB2", "Error"],
+      "answer": "AB2",
+      "explanation": "This line of code prints 'Hello, World!' to the console."
+    }
+  ]
 }
