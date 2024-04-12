@@ -12,7 +12,7 @@ async function getTest(course: string, lesson: string) {
 
       const data = await fs.readFile(filePath, "utf-8");
 
-      return json(JSON.parse(data));
+      return JSON.parse(data);
   }
 }
 
@@ -28,7 +28,8 @@ export async function GET({ params }: any) {
       return json({ ok: false, error_message: "Invalid Quiz!" });
     }
 
-    return getTest(course, lesson);
+    const tests = await getTest(course, lesson);
+    return json({ ok: true, ...tests });
     // const filePath = path.resolve("src/content/tests/go", `test-1.json`);
 
     // // Read the file's content
