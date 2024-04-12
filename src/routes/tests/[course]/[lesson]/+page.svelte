@@ -54,7 +54,8 @@
     max-width: 800px;
     margin: 2rem auto;
     padding: 2rem;
-    background:#f9f9f9;
+    /* background:#f9f9f9; */
+    background: var(--quiz-bg-color)
     /* border-radius: 10px; */
     /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   }
@@ -62,7 +63,8 @@
   /* Title Styling */
   h1 {
     font-size: 2.2rem;
-    color: #333;
+    /* color: #333; */
+    color: var(--quiz-text-color);
     text-align: center;
     margin-bottom: 1.5rem;
     animation: slideInFromLeft 1s ease-out;
@@ -71,7 +73,7 @@
   /* Questions */
   .question {
     font-size: 1.4em;
-    color: #444;
+    color: var(--quiz-text-color);
     margin-bottom: 1rem;
     transition: color 0.3s;
   }
@@ -86,8 +88,11 @@
     display: block;
     padding: 12px 20px;
     margin-bottom: 10px;
-    background-color: #ffffff;
-    border: 2px solid #ddd;
+    /* background-color: #ffffff; */
+    /* border: 2px solid #ddd; */
+    color: var(--quiz-text-color);
+    background-color: var(--quiz-bg-color);
+    border: 2px solid var(--quiz-border-color); 
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
@@ -95,15 +100,17 @@
 
   .option:hover, .option:focus {
     transform: scale(1.05);
-    background-color: #e9e9ff;
-    border-color: #bbb;
+    /* background-color: #e9e9ff;
+    border-color: #bbb; */
+    background-color: var(--quiz-option-hover-bg);
   }
 
   /* Feedback animation */
   .feedback {
     margin-top: 20px;
     padding: 12px;
-    background-color: #f0f8ff;
+    /* background-color: #f0f8ff; */
+    background-color: var(--quiz-feedback-bg);
     border-left: 5px solid #4c51bf;
     font-style: italic;
     animation: fadeIn 1s ease-out;
@@ -111,8 +118,8 @@
 
   /* Correct/Incorrect Colors for Feedback */
   .correct {
-    background-color: #e6ffed;
-    border-color: #34d399;
+    background-color: var(--quiz-correct-bg);
+    border-color:var(--quiz-correct-border);
   }
 
   /* Button Styling */
@@ -120,7 +127,8 @@
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #5a67d8;
+    /* background-color: #5a67d8; */
+    background-color: var(--quiz-button-bg);
     color: white;
     border: none;
     border-radius: 6px;
@@ -130,7 +138,8 @@
   }
 
   button:hover {
-    background-color: #4c51bf;
+    /* background-color: #4c51bf; */
+    background-color: var(--quiz-button-hover-bg);
   }
 
   /* Keyframes for animations */
@@ -172,13 +181,13 @@
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
-    background-color: #ffe4e6; /* Reddish background to indicate wrong */
-    border-color: #fc8181;
+    background-color: var(--quiz-incorrect-bg); /* Reddish background to indicate wrong */
+    border-color: var(--quiz-incorrect-border);
   }
 
   .option.incorrect:hover, .option.incorrect:focus {
-    background-color: #ffe4e6; /* Lighter shade of red for hover on incorrect */
-    border-color: #fc8181; /* Darker shade of red for border on hover */
+    background-color: var(--quiz-incorrect-bg); /* Lighter shade of red for hover on incorrect */
+    border-color:var(--quiz-incorrect-border); /* Darker shade of red for border on hover */
     /* transform: scale(1.05); Keep the transform effect if you like */
 }
 
@@ -212,17 +221,20 @@
 }
 
 .loading-dot:nth-child(1) {
-    background-color: #e63946; /* A vibrant red */
+    /* background-color: #e63946; A vibrant red */
+    background-color: var(--quiz-loading-dot-color-1);
     animation-delay: 0s;
 }
 
 .loading-dot:nth-child(2) {
-    background-color: #f1c40f; /* A bright yellow */
+    /* background-color: #f1c40f; A bright yellow */
+    background-color: var(--quiz-loading-dot-color-2);
     animation-delay: 0.5s;
 }
 
 .loading-dot:nth-child(3) {
-    background-color: #2a9d8f; /* A calming teal */
+    /* background-color: #2a9d8f; A calming teal */
+    background-color: var(--quiz-loading-dot-color-3);
     animation-delay: 1s;
 }
 
@@ -256,7 +268,6 @@
 
 <div class="quiz-container">
   {#if isFetching}
-  <span>Loading</span>
   <div class="loading">
     <div class="loading-dot"></div>
     <div class="loading-dot"></div>
