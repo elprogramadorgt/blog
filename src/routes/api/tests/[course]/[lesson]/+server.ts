@@ -39,7 +39,7 @@ export async function GET({ params }: any) {
   } catch (err) {
     // Handle errors, such as the file not existing
     console.error(err);
-    return error(404, `Quiz not found: ${quizId}`);
+    return error(404, `Quiz not found`);
   }
 }
 
