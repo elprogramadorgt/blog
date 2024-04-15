@@ -276,19 +276,21 @@
 
 .results h2 {
     font-size: 2rem; /* Larger size for headers */
-    color: var(--accent-color);
+    color: var(--card-title-color);
     margin-bottom: 1rem;
 }
 
 .results p {
     font-size: 1.2rem; /* Slightly larger than default text size */
-    color: var(--text-color);
+    color: var(--quiz-text-color);
     line-height: 1.5; /* Improving line spacing for better readability */
 }
 
-.result-message {
+
+
+p.result-message {
     font-size: 1.3rem; /* Larger for emphasis */
-    color: var(--secondary-accent-color);
+    color: var(--tag-text-color);
     margin-top: 1rem;
     padding: 1rem;
     background-color: var(--tag-bg-color); /* Using a subtle background for emphasis */
