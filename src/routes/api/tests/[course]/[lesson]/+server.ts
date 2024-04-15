@@ -17,7 +17,6 @@ async function getTest(course: string, lesson: string) {
 }
 
 export async function GET({ params }: any) {
-  console.log(params.course, params.lesson);
   // The `params.quizId` holds the dynamic part of the URL, e.g., "test-1" for "/quiz/test-1"
   const { course, lesson } = params;
 

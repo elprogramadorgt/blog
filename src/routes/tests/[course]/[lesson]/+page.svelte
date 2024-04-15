@@ -41,7 +41,6 @@
       showExplanation = false;
       selectedOption = '';
     } else {
-      console.log('Quiz Completed');
       showResults = true; // Show results when the quiz is completed
     }
   }

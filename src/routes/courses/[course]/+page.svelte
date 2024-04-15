@@ -2,7 +2,6 @@
   import ListPosts from "../../../components/ListPosts.svelte";
 
   export let data;
-  console.log(data.posts)
 </script>
 
 
