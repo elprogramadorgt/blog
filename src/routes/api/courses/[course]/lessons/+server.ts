@@ -24,8 +24,6 @@ async function getClases(course: string) {
 
   let posts: Post[] = getDocuments(paths);
 
-
-
   posts = posts.sort(
     (first: Post, second: Post) =>
       new Date(first.date).getTime() - new Date(second.date).getTime()
