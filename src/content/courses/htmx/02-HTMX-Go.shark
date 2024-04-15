@@ -5,8 +5,9 @@ date: '2023-09-25T00:00:00'
 url: '/courses/htmx/'
 tags: 
     - htmx
+    - frontend
+    - backend
     - go
-    - esp
 
 published: true
 ---
