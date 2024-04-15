@@ -1,5 +1,5 @@
 <script lang="ts">
-  import confetti from 'canvas-confetti';
+    import confetti from 'canvas-confetti';
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
 
@@ -8,13 +8,14 @@
   let selectedOption = '';
   let showExplanation = false;
   let isFetching = true;
+  let score = 0; // Track the user's score
+  let showResults = false; // Determines when to show the results
 
   onMount(async () => {
     const { course, lesson } = $page.params;
     const response = await fetch(`/api/tests/${course}/${lesson}`);
     if (response.ok) {
       quiz = await response.json();
-      
     }
     isFetching = false;
   });
@@ -23,18 +24,17 @@
     selectedOption = option;
     showExplanation = true;
     if (option === quiz.questions[currentQuestionIndex].answer) {
+      score++; // Increment score for each correct answer
       runConfetti();
     }
   }
-
   function runConfetti() {
     confetti({
       particleCount: 100,
       spread: 70,
-      origin: { y: 0.6 } // Make sure confetti comes from the bottom of the screen
+      origin: { y: 0.6 }
     });
   }
-
   function nextQuestion() {
     if (currentQuestionIndex < quiz.questions.length - 1) {
       currentQuestionIndex++;
@@ -42,9 +42,11 @@
       selectedOption = '';
     } else {
       console.log('Quiz Completed');
-      // Add further actions here
+      showResults = true; // Show results when the quiz is completed
     }
   }
+
+
 </script>
 
 
@@ -263,16 +265,69 @@
     background-color: #ffe4e6; /* Soft background color to draw attention */
 }
 
+.results {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--card-bg-color); /* Ensure it adapts to light/dark themes */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.results h2 {
+    font-size: 2rem; /* Larger size for headers */
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.results p {
+    font-size: 1.2rem; /* Slightly larger than default text size */
+    color: var(--text-color);
+    line-height: 1.5; /* Improving line spacing for better readability */
+}
+
+.result-message {
+    font-size: 1.3rem; /* Larger for emphasis */
+    color: var(--secondary-accent-color);
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--tag-bg-color); /* Using a subtle background for emphasis */
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .results h2 {
+        font-size: 1.8rem;
+    }
+
+    .results p, .result-message {
+        font-size: 1rem;
+    }
+
+
+}
+
 </style>
 
 
 <div class="quiz-container">
   {#if isFetching}
-  <div class="loading">
-    <div class="loading-dot"></div>
-    <div class="loading-dot"></div>
-    <div class="loading-dot"></div>
-  </div>
+    <div class="loading">Loading...</div>
+  {:else if showResults}
+    <div class="results">
+      <h2>Quiz Completed!</h2>
+      <p>You scored {score} out of {quiz.questions.length}.</p>
+      <p class="result-message">
+        {#if score === quiz.questions.length}
+          Excellent job! You've mastered this topic.
+        {:else if score > quiz.questions.length / 2}
+          Good effort! Review some more to improve.
+        {:else}
+          Keep trying! Consider reviewing the material.
+        {/if}
+      </p>
+      <button on:click={() => location.reload()}>Try Again</button>
+    </div>
   {:else if quiz && quiz.ok}
     <h1>{quiz.title}</h1>
     <div>
@@ -297,6 +352,6 @@
       {/if}
     </div>
   {:else}
-  <div class="not-available">Quiz not available.</div>
+    <div class="not-available">Quiz not available.</div>
   {/if}
 </div>
