@@ -29,7 +29,7 @@ function toggleMenu() {
           <a href="/" class="py-5 px-3  transition duration-300">Home</a>
           <a href="/about" class="py-5 px-3  transition duration-300">About</a>
           <a href="/blog" class="py-5 px-3  transition duration-300">Blog</a>
-          <a href="/lessons" class="py-5 px-3 transition duration-300">Lessons</a> <!-- Highlighted -->
+          <a href="/courses" class="py-5 px-3 transition duration-300">Cursos</a> <!-- Highlighted -->
         </div>
 
          <!-- Toggle Button -->
@@ -51,7 +51,7 @@ function toggleMenu() {
       <a href="/" class="block py-2 px-4 text-sm ">Home</a>
       <a href="/about" class="block py-2 px-4 text-sm ">About</a>
       <a href="/blog" class="block py-2 px-4 text-sm ">Blog</a>
-      <a href="/lessons" class="block py-2 px-4 text-sm">Lessons</a> <!-- Highlighted -->
+      <a href="/courses" class="block py-2 px-4 text-sm">Cursos</a> <!-- Highlighted -->
     </div>
   </nav>
   
