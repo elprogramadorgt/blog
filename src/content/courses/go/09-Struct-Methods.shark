@@ -1,3 +1,15 @@
+---
+title: 09 Métodos en Structs
+description: Cómo agregar métodos a los structs en Go y cómo saber si los structs son iguales.
+date: '2024-04-30T00:00:00'
+url: '/courses/go/'
+tags: 
+    - go
+    - programming
+	- structs
+published: true
+---
+
 # 09 Métodos en Structs
 
 Un método a diferencia de una función, es que este es propiedad de un tipo de dato.
