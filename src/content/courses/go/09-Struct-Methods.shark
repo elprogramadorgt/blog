@@ -149,7 +149,7 @@ En este caso vamos a definir nuestra método tal y como lo hemos venido haciendo
 
 ```go
 
-func (p point) isEqual(p2 point) bool {
+func (p point) Equal(p2 point) bool {
 	return p.X == p2.X && p.Y == p2.Y
 }
 ```
