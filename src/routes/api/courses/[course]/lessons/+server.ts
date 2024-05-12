@@ -6,17 +6,17 @@ async function getClases(course: string) {
   let paths: any = [];
   switch (course.toLowerCase()) {
     case "go":
-      paths = import.meta.glob("/src/content/courses/go/*.shark", {
+      paths = import.meta.glob("/src/content/courses/go/*.md", {
         eager: true,
       });
       break;
     case "htmx":
-      paths = import.meta.glob("/src/content/courses/htmx/*.shark", {
+      paths = import.meta.glob("/src/content/courses/htmx/*.md", {
         eager: true,
       });
       break;
     case "linux":
-      paths = import.meta.glob("/src/content/courses/linux/*.shark", {
+      paths = import.meta.glob("/src/content/courses/linux/*.md", {
         eager: true,
       });
       break;

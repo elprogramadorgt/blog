@@ -3,7 +3,7 @@ import { error } from "@sveltejs/kit";
 export async function load({ params }: any) {
   try {
     const post = await import(
-      `../../../../content/courses/${params.course}/${params.chapter}.shark`
+      `../../../../content/courses/${params.course}/${params.chapter}.md`
     );
 
     return {
