@@ -1,7 +1,7 @@
 ---
 title: 10 Maps
-description: Cómo agregar métodos a los structs en Go y cómo saber si los structs son iguales.
-date: '2024-04-30T00:00:00'
+description: Cómo crear, agregar y eliminar items de un map.
+date: '2024-04-14T00:00:00'
 url: '/courses/go/'
 tags: 
     - go
@@ -23,7 +23,87 @@ Estas keys permiten que agregar o eliminar elementos de una mapa sea eficiente.
 Syntaxis de un map
 
 ```go
-var countriesAreaCode map[string]int
+var fruits map[string]int
 ```
 
-para poder
+Para poder utilizar el map es importante inicializarlo primero con la funcion make
+
+```go
+fruits = make(map[string]int)
+```
+
+Ahora ya procedemos a agregar elementos
+
+```go
+fruits["grape"] = 5;
+fruits["orange"] = 9;
+```
+
+y para obtener los valores de este mismos solo le decimos que key buscamos y listo
+
+```go
+fmt.Println(fruits["grape"])
+```
+
+Tambien podemos inicializar los maps utilizando `map literals`
+
+```go
+fruits := map[string]int{
+    "grape": 14,
+    "orange":  3,
+    "strawberry":   8,
+}
+```
+
+> Solo mucha atencion con esa comma al final del map. Go es bien estricto con eso y da error. Lo bueno es que no te deja compilarlo entonces te vas a dar cuenta y los mensajes de error son bastante faciles de entender. (A diferencia de React XDDDD)
+
+## Key Exists
+
+Para validar si una key existe dentro de nuestro map, simplemente accedemos a la key y listo. Si la key no existe retorna el zero value de la variable que definimos.
+
+> Recordemos que go tiene default values para los tipos de variables por ejemplo para int es 0 para bool es false creo y asi sucesivamente. Solo tengan cuidado que no sea uno de los valores que esperan en su codigo porque se va poner alegre debuguear eso. XDDDDDD
+
+Aunque en mi caso, la mejor forma que veo para validar si existe es destructurandolo de una vez en el if. (no es el termino tecnico correcto en cuanto lo tenga lo actualizo)
+
+pero se ve de la siguiente forma:
+
+```go
+if v, ok := fruits["kiwi"]; ok {
+    fmt.Println(v)
+} else {
+    fmt.Println("Key does not exist")
+}
+```
+
+lo que sucede aqui es que separamos el valor y resultado si existe o no del mapa y lo utilizamos en el if.
+
+por eso esta el `;` es igual a que hicieran esto:
+
+```go
+v, ok := fruits["kiwi"]
+if  ok {
+    fmt.Println(v)
+} else {
+    fmt.Println("Key does not exist")
+}
+```
+
+> Esto es posible porque nos retorna 2 valores. Aunque he visto personas que se quejan de esto, en lo personal me parece excelente la forma de validarlo, te evita muchos errores.
+
+## Delete key
+
+Para eliminar una key solo llamamos a la funcion `delete(map, key)`.
+
+```go
+delete(fruits, "lime")
+```
+
+Esta funcion no retorna ningun valor, pero si quieres saber si una key existe antes de eliminarla, podemos utilizar el codigo anterior para validar si la key existe.
+
+## Number of elements
+
+Para obtener el numero de items en el map utilizamos la funcion `len(map)`.
+
+```go
+len(fruits)
+```
