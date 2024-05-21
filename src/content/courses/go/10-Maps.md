@@ -6,7 +6,7 @@ url: '/courses/go/'
 tags: 
     - go
     - programming
-	- structs
+	- map
 published: true
 ---
 
@@ -16,17 +16,17 @@ Hasta el momento hemos venido utilizando arrays y slices que son estructuras que
 
 Los maps utilizan un hash table para almacenar los datos de forma asociativa.
 
-Los elementos de un map no se acceden mediante posiciones sino que por medio de una key ( una key es un valor unico que identifica cada elemento en el mapa).
+Los elementos de un map no se acceden mediante posiciones sino que por medio de una key (una key es un valor único que identifica cada elemento en el mapa).
 
-Estas keys permiten que agregar o eliminar elementos de una mapa sea eficiente.
+Estas keys permiten que agregar o eliminar elementos de un map sea eficiente.
 
-Syntaxis de un map
+Sintaxis de un map
 
 ```go
 var fruits map[string]int
 ```
 
-Para poder utilizar el map es importante inicializarlo primero con la funcion make
+Para poder utilizar el map es importante inicializarlo primero con la función make
 
 ```go
 fruits = make(map[string]int)
@@ -45,7 +45,7 @@ y para obtener los valores de este mismos solo le decimos que key buscamos y lis
 fmt.Println(fruits["grape"])
 ```
 
-Tambien podemos inicializar los maps utilizando `map literals`
+también podemos inicializar los maps utilizando `map literals`
 
 ```go
 fruits := map[string]int{
@@ -55,15 +55,15 @@ fruits := map[string]int{
 }
 ```
 
-> Solo mucha atencion con esa comma al final del map. Go es bien estricto con eso y da error. Lo bueno es que no te deja compilarlo entonces te vas a dar cuenta y los mensajes de error son bastante faciles de entender. (A diferencia de React XDDDD)
+> Solo atención con esa coma al final del map. Go es bien estricto con eso y da error. Lo bueno es que no te deja compilarlo entonces te vas a dar cuenta y los mensajes de error son bastante fáciles de entender. (A diferencia de React XDDDD)
 
 ## Key Exists
 
 Para validar si una key existe dentro de nuestro map, simplemente accedemos a la key y listo. Si la key no existe retorna el zero value de la variable que definimos.
 
-> Recordemos que go tiene default values para los tipos de variables por ejemplo para int es 0 para bool es false creo y asi sucesivamente. Solo tengan cuidado que no sea uno de los valores que esperan en su codigo porque se va poner alegre debuguear eso. XDDDDDD
+> Recordemos que go tiene default values para los tipos de variables por ejemplo para int es 0 para bool es false creo y asi sucesivamente. Solo tengan cuidado de que no sea uno de los valores que esperan en su código porque se va poner alegre debuguear eso. XDDDDDD
 
-Aunque en mi caso, la mejor forma que veo para validar si existe es destructurandolo de una vez en el if. (no es el termino tecnico correcto en cuanto lo tenga lo actualizo)
+Aunque en mi caso, la mejor forma que veo para validar si existe es destructurandolo de una vez en el if. (no es el termino técnico correcto en cuanto lo tenga lo actualizo)
 
 pero se ve de la siguiente forma:
 
@@ -75,7 +75,7 @@ if v, ok := fruits["kiwi"]; ok {
 }
 ```
 
-lo que sucede aqui es que separamos el valor y resultado si existe o no del mapa y lo utilizamos en el if.
+lo que sucede aquí es que separamos el valor y resultado si existe o no del mapa y se utiliza en el if.
 
 por eso esta el `;` es igual a que hicieran esto:
 
@@ -92,17 +92,17 @@ if  ok {
 
 ## Delete key
 
-Para eliminar una key solo llamamos a la funcion `delete(map, key)`.
+Para eliminar una key solo llamamos a la función `delete(map, key)`.
 
 ```go
 delete(fruits, "lime")
 ```
 
-Esta funcion no retorna ningun valor, pero si quieres saber si una key existe antes de eliminarla, podemos utilizar el codigo anterior para validar si la key existe.
+Esta función no retorna ningún valor, pero si quieres saber si una key existe antes de eliminarla, podemos utilizar el codigo anterior para validar si la key existe.
 
 ## Number of elements
 
-Para obtener el numero de items en el map utilizamos la funcion `len(map)`.
+Para obtener el número de items en el map utilizamos la funcion `len(map)`.
 
 ```go
 len(fruits)
