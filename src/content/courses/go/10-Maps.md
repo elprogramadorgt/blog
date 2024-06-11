@@ -1,12 +1,12 @@
 ---
 title: 10 Maps
-description: Cómo crear, agregar y eliminar items de un map.
-date: '2024-04-14T00:00:00'
-url: '/courses/go/'
-tags: 
-    - go
-    - programming
-	- map
+description: Como crear, agregar y eliminar items de un map.
+date: "2024-05-14T00:00:00"
+url: "/courses/go/"
+tags:
+  - go
+  - programming
+  - map
 published: true
 ---
 
