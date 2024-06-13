@@ -1,13 +1,15 @@
 <script>
-  let isDark = false;
+  let isDark = true;
+
   function toggleDarkMode() {
     isDark = !isDark;
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    document.documentElement.classList.toggle("dark", isDark);
   }
+
+  if (typeof document !== "undefined" && isDark) {
+    document.documentElement.classList.add("dark");
+  }
+
   let isMenuOpen = false;
 
   function toggleMenu() {
@@ -58,7 +60,7 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div class={`mobile-menu  md:hidden ${isMenuOpen ? "block" : "hidden"}`}>
+  <div class={`mobile-menu md:hidden ${isMenuOpen ? "block" : "hidden"}`}>
     <a href="/" class="block py-2 px-4 text-sm">Home</a>
     <a href="/about" class="block py-2 px-4 text-sm">About</a>
     <a href="/courses" class="block py-2 px-4 text-sm">Cursos</a>
