@@ -12,7 +12,7 @@ published: true
 
 # 12 JSON en Go
 
-JSON es un formato de texto, que inicio como una forma de representar objetos en JavaScript, pero debido a su facilidad de uso se hizo popular para el envió y recepción de datos entre clientes y servidores.
+JSON es un formato de texto, que inicio como una forma de representar objetos en JavaScript, pero debido a su facilidad de uso se hizo popular para el envío y recepción de datos entre clientes y servidores.
 
 ## Tipos de datos soportados por JSON
 
@@ -199,9 +199,9 @@ func main() {
 
 ```
 
-En el ejemplo anterior agregamos la estructure UserInfo pero tambien se puede hacer por separado, que puede suceder si se tiene la data modelada
+En el ejemplo anterior agregamos la estructure UserInfo pero también se puede hacer por separado, que puede suceder si se tiene la data modelada
 
-Estos serian los cambios:
+Estos serían los cambios:
 
 ```go
 type UserInfo struct {
