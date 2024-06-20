@@ -1,28 +1,26 @@
 ---
 title: Linux For Cybersecurity 01
 description: Clase 01 de linux para Cybersecurity
-date: '2023-07-08T00:00:00'
-url: '/courses/linux/'
-tags: 
-    - linux
-    - cybersecurity
-published: true
+date: "2023-07-08T00:00:00"
+url: "/courses/linux/"
+tags:
+  - linux
+  - cybersecurity
+published: false
 ---
 
-Para este curso vamos a utilizar Kali Linux 2023, puedes utilizar cualquier otra versión de linux si deseas. 
+Para este curso vamos a utilizar Kali Linux 2023, puedes utilizar cualquier otra versión de linux si deseas.
 
 Mi recomendación si estas iniciando es que utilices Kali, porque ya tiene muchas herramientas y si no, son muy fáciles de instalar.
 
-## * Conceptos Básicos
+## \* Conceptos Básicos
 
 ### - Binarios
 
-
 Que tal
 
-
 ```ts
-function sayHI(){
-    console.log(`Hey ${name}! 👋`)
+function sayHI() {
+  console.log(`Hey ${name}! 👋`);
 }
 ```
