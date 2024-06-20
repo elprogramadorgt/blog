@@ -3,7 +3,7 @@ import type { Post } from "$lib/types";
 import { getDocuments } from "$lib/utils/document";
 
 async function getDocs() {
-  const paths = import.meta.glob("/src/content/**/*.md", { eager: true });
+  const paths = import.meta.glob("/src/content/posts/*.md", { eager: true });
 
   let posts: Post[] = getDocuments(paths);
 
