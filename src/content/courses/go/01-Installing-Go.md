@@ -196,7 +196,7 @@ Para esto es necesario tener en cuenta 2 variables de entorno de Go
 1. GOARH - para especificar la arquitectura
 2. GOOS - para especificar el sistema operativo
 
-Entonces la tabla va de la siguiente forma:
+En la siguiente tabla se muestran los parametros para cada sistema:
 
 | OS      | GOOS    | GOARH |
 | ------- | ------- | ----- |
@@ -204,10 +204,18 @@ Entonces la tabla va de la siguiente forma:
 | MacOs   | darwin  | amd64 |
 | Windows | windows | amd64 |
 
+Si buscas otro sistema operativo aqui te dejo el listado.
+
 [listado_os_arch](https://github.com/golang/go/blob/master/src/go/build/syslist.go)
 
-```ts
-function sayHI() {
-  console.log(`Hey ${name}! 👋`);
-}
+Para generar el binario para linux seria con el siguiente comando.
+
+```bash
+GOOS=linux GOARCH=amd64 go build -o  nombre_del_binariofinal
+```
+
+Con windows
+
+```bash
+GOOS=windows GOARCH=amd64 go build -o  nombre_del_binariofinal.exe
 ```
