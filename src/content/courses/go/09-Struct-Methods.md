@@ -1,12 +1,12 @@
 ---
-title: 09 Métodos en Structs
-description: Cómo agregar métodos a los structs en Go y cómo saber si los structs son iguales.
-date: '2024-04-30T00:00:00'
-url: '/courses/go/'
-tags: 
-    - go
-    - programming
-    - structs
+title: 09 Métodos en Structs y Comparación en Go
+description: "Aprende a agregar métodos a structs en Go, incluyendo el uso de punteros para actualizar valores y técnicas para comparar structs utilizando el paquete cmp."
+date: "2024-04-30T00:00:00"
+url: "/courses/go/"
+tags:
+  - Go
+  - Programming
+  - Structs
 published: true
 ---
 
@@ -141,9 +141,7 @@ func main() {
 }
 ```
 
-
 Pero que sucede en el caso que querramos hacer nuestra propia funcion de comparación.
- 
 
 En este caso vamos a definir nuestra método tal y como lo hemos venido haciendo
 

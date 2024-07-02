@@ -7,7 +7,7 @@ tags:
   - htmx
   - frontend
   - backend
-  - go
+  - Go
 
 published: false
 ---

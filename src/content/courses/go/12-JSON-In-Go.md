@@ -1,16 +1,16 @@
 ---
-title: 12 Encode y Decode JSON en Go
-description: Cómo codificar y decodificar JSON en Go.
+title: 12 Trabajando con JSON en Go
+description: "Aprende a decodificar JSON en Go, incluyendo objetos, arrays y datos anidados, utilizando struct field tags y métodos eficientes para manejar datos JSON."
 date: "2024-06-04T00:00:00"
 url: "/courses/go/"
 tags:
-  - go
-  - programming
+  - Go
+  - Programming
   - json
 published: true
 ---
 
-# 12 JSON en Go
+# 12 Trabajando con JSON en Go
 
 JSON es un formato de texto, que inicio como una forma de representar objetos en JavaScript, pero debido a su facilidad de uso se hizo popular para el envío y recepción de datos entre clientes y servidores.
 

@@ -1,16 +1,16 @@
 ---
-title: 10 Maps
-description: Como crear, agregar y eliminar items de un map.
+title: 10 Trabajando con Maps en Go
+description: "Aprende a utilizar maps en Go, incluyendo su creación, inicialización, acceso, validación de claves, eliminación de elementos y conteo de elementos."
 date: "2024-05-14T00:00:00"
 url: "/courses/go/"
 tags:
-  - go
-  - programming
-  - map
+  - Go
+  - Programming
+  - Map
 published: true
 ---
 
-# 10 Maps
+# 10 Trabajando con Maps en Go
 
 Hasta el momento hemos venido utilizando arrays y slices que son estructuras que nos permiten acceder a los datos por medio de su posición.
 

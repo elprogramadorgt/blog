@@ -1,11 +1,11 @@
 ---
-title: 01 Installing Golang in Linux
-description: First go post
-date: "2023-07-08T00:00:00"
+title: 01 Instalar Go en Linux
+description: "Guía completa sobre cómo instalar Go en Linux y crear tu primer programa en Go."
+date: "2023-04-08T00:00:00"
 url: "/courses/go/"
 tags:
-  - go
-  - programming
+  - Go
+  - Programming
 published: true
 ---
 
@@ -189,7 +189,7 @@ Pero si en caso alguien sube un codigo y no tiene el formato bien, pues ejecutas
 
 ### Run a Go Program
 
-Como lo mencione al principio en Go podemos generar nuestro binario para cualquier Sistema Operativo desde cualquier sistema operativo, es decir, desde linux puedo generar el binario para ser ejecutado en windows.
+Como lo mencioné al principio, en Go podemos generar nuestro binario para cualquier Sistema Operativo desde cualquier sistema operativo, es decir, desde Linux puedo generar el binario para ser ejecutado en Windows.
 
 Para esto es necesario tener en cuenta 2 variables de entorno de Go
 

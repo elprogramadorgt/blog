@@ -1,16 +1,16 @@
 ---
-title: 13 Mapear propiedades JSON
-description: Cómo mapear propiedades personalizadas en JSON
+title: 13 Mapeando Propiedades JSON en Go
+description: "Aprende a manejar diferentes formatos de campos en JSON usando struct field tags en Go, y descubre cómo acceder a datos complejos anidados dentro de JSON."
 date: "2024-06-24T00:00:00"
 url: "/courses/go/"
 tags:
-  - go
-  - programming
+  - Go
+  - Programming
   - json
 published: true
 ---
 
-# 13 Mapeando propiedades
+# 13 Mapeando Propiedades JSON en Go
 
 En un mundo ideal todos utilizaríamos el mismo estándar para nombrar las variables, funciones, etc. Pero no es el caso, y cuando trabajamos con JSON vamos a encontrar diferentes campos, algunos con espacios `{ "current date": "05/05/2024"}` otros igual pero en diferente idioma `{"fecha actual": "05/05/2024"}`, también los hay con mayúscula, minúscula, etc. Lo importante es que nuestra aplicación se adapte a este tipo de campos.
 
