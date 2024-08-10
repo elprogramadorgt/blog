@@ -8,7 +8,7 @@ FROM base AS build
 WORKDIR /app
 
 
-COPY .env .env
+COPY _env .env
 COPY . .
 
 RUN pnpm i
