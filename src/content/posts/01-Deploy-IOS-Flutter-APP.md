@@ -1,19 +1,20 @@
 ---
-title: Compilar una applicación Flutter en IOS utilizando Google Sign In
+title: Flutter (ios) Your app is missing support for the following URL schemes
 description: First Post
-date: '2023-07-08T00:00:00'
-url: '/posts/'
-tags: 
-    - ios
-    - iphone
-    - flutter
-    - google
-    - firebase
+date: "2023-07-08T00:00:00"
+url: "/posts/"
+tags:
+  - ios
+  - iphone
+  - flutter
+  - google
+  - firebase
 published: true
 ---
+
 Hola a todos, como bien saben nuestra apliación de EduQuest esta hecha en Flutter y la autenticación de usuarios es con una cuenta de Gmail.
 
-La aplicación en android funcionó sin mayor problema, pero cuando intentamos compilarla en Xcode aparecio  este error:
+La aplicación en android funcionó sin mayor problema, pero cuando intentamos compilarla en Xcode aparecio este error:
 <br>
 
 ```shell
@@ -30,7 +31,7 @@ to ensure proper integration.
 2023-09-10 09:28:57.095571-0600 Runner[9754:519912] [connection] nw_connection_copy_connected_local_endpoint_block_invoke [C3] Client called nw_connection_copy_connected_local_endpoint on unconnected nw_connection
 2023-09-10 09:28:57.095616-0600 Runner[9754:519912] [connection] nw_connection_copy_connected_remote_endpoint_block_invoke [C3] Client called nw_connection_copy_connected_remote_endpoint on unconnected nw_connection
 2023-09-10 09:28:57.095665-0600 Runner[9754:519912] [connection] nw_connection_copy_protocol_metadata_internal_block_invoke [C3] Client called nw_connection_copy_protocol_metadata_internal on unconnected nw_connection
-2023-09-10 09:28:57.464592-0600 Runner[9754:519885] flutter: Registration 
+2023-09-10 09:28:57.464592-0600 Runner[9754:519885] flutter: Registration
 2023-09-10 09:29:00.012017-0600 Runner[9754:519885] [VERBOSE-2:dart_vm_initializer.cc(41)] Unhandled Exception: PlatformException(google_sign_in, Your app is missing support for the following URL schemes: com.googleusercontent.apps.59988387237-sd34asd87fas98d7fas87df6, NSInvalidArgumentException, null)
 #0      StandardMethodCodec.decodeEnvelope (package:flutter/src/services/message_codecs.dart:652:7)
 #1      MethodChannel._invokeMethod (package:flutter/src/services/platform_channel.dart:310:18)
@@ -71,8 +72,7 @@ libc++abi: terminating due to uncaught exception of type NSException
 
 ```
 
-
-> Mi recomendación cuando tenemos errores así es leerlos un par de veces linea por linea, esto ayuda a tener una mejor idea de cual puede ser el problema y realizar una mejor busqueda en internet o tener una mejor platica con ChatGPT y  solucionar el problema rápido y sin tanta cosa XDDD.
+> Mi recomendación cuando tenemos errores así es leerlos un par de veces linea por linea, esto ayuda a tener una mejor idea de cual puede ser el problema y realizar una mejor busqueda en internet o tener una mejor platica con ChatGPT y solucionar el problema rápido y sin tanta cosa XDDD.
 
 Este error literalmente nos dice como solucionarlo. y la respuesta esta aquí.
 
@@ -89,9 +89,9 @@ Este es un archivo XML, entonces, debemos buscar el primer tag `<dict>` y agrega
 ```shell
 
 <key>CFBundleURLTypes</key>
-<array> 
+<array>
  <dict>
-  
+
         <key>CFBundleURLSchemes</key>
         <array>
             <string>com.googleusercontent.apps.59988387237-sd34asd87fas98d7fas87df6</string>
@@ -100,12 +100,13 @@ Este es un archivo XML, entonces, debemos buscar el primer tag `<dict>` y agrega
 </array>
 
 ```
+
 El valor se obtiene del mensaje de error, entonces solo debes sustituirlo por el que se muestra en tu consola.
 
 y listo, eso es todo, espero hayas podido solucionar el error.
 
 Caso contrario, les dejo el discord de la comunidad, tenemos un canal de ayuda.
 
-<br>	
+<br>
 
 [Discord](https://discord.com/invite/C5GcN3k9P9)
