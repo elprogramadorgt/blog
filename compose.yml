@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  blog:
+    image: elprogramadorgt/blog:latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+  eduquest:
+    image: elprogramadorgt/backend-eduquest:latest
+    build:
+      context: .
+    environment:
+      - MONGODB_URI=mongodb+srv://admin:oOG0PcwsUezZ7qmq@cluster0.dqk1y.azure.mongodb.net/?retryWrites=true&w=majoritytCt0lBHgC70B7US=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
+    ports:
+      - "8080:8080"
