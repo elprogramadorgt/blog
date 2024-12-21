@@ -106,8 +106,6 @@ func main() {
 
 ```
 
----
-
 ## **5. Valores de Retorno**
 
 Las funciones en Go pueden devolver valores, lo que las hace más útiles y versátiles.
@@ -163,8 +161,6 @@ func addNum(num1 int, num2 int) (sum int) {
 }
 
 ```
-
----
 
 ## **6. Funciones Variádicas**
 
@@ -225,8 +221,6 @@ fmt.Println(addNums(10, nums...)) // Imprime: 16
 
 ```
 
----
-
 ## **7. Funciones Anónimas y Closures**
 
 Go soporta funciones anónimas, que son funciones sin nombre. Estas son útiles para tareas rápidas o cuando necesitas pasar una función como argumento.
@@ -262,16 +256,12 @@ func main() {
 
 ```
 
----
-
 ## **8. Buenas Prácticas**
 
 1. **Nombres significativos:** Los nombres de funciones deben reflejar claramente su propósito.
 2. **Evita funciones largas:** Divide tareas complejas en funciones más pequeñas.
 3. **Utiliza punteros con cuidado:** Solo cuando sea necesario modificar variables originales.
 4. **Maneja errores correctamente:** Aprovecha el retorno de múltiples valores para incluir errores.
-
----
 
 ## **Resumen**
 

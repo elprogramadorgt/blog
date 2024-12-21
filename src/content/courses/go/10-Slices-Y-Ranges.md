@@ -20,8 +20,7 @@ El **slicing** permite extraer subconjuntos de elementos de un array o slice.
 ### **Sintaxis:**
 
 ```go
-go
-Copy code
+
 slice[start:end]
 
 ```
@@ -32,8 +31,7 @@ slice[start:end]
 ### **Ejemplo Básico:**
 
 ```go
-go
-Copy code
+
 var c [4]string
 c[0] = "iOS"
 c[1] = "Android"
@@ -47,8 +45,6 @@ fmt.Println(c[:])   // ["iOS", "Android", "Windows", "MacOS"]
 
 ```
 
----
-
 ## **2. Efectos del Slicing en la Memoria**
 
 Cuando haces un slicing de un slice o array, Go ajusta el puntero para que apunte al rango seleccionado. Esto significa que los cambios en el slice afectarán el array subyacente.
@@ -56,8 +52,7 @@ Cuando haces un slicing de un slice o array, Go ajusta el puntero para que apunt
 ### **Ejemplo:**
 
 ```go
-go
-Copy code
+
 t := []int{1, 2, 3, 4, 5}
 fmt.Println(len(t)) // 5
 fmt.Println(cap(t)) // 5
@@ -69,8 +64,6 @@ fmt.Println(cap(t)) // 3
 
 ```
 
----
-
 ## **3. Iterar sobre Slices y Arrays**
 
 Usamos el **`for-range`** para iterar sobre slices y arrays.
@@ -78,8 +71,7 @@ Usamos el **`for-range`** para iterar sobre slices y arrays.
 ### **Ejemplo:**
 
 ```go
-go
-Copy code
+
 t := []int{1, 2, 3, 4, 5}
 
 for i, v := range t {
@@ -88,8 +80,6 @@ for i, v := range t {
 
 ```
 
----
-
 ## **4. Copiar Slices**
 
 Para copiar un slice, usamos la función `copy`. Esto crea una copia independiente, lo que significa que los cambios en una copia no afectan la otra.
@@ -97,8 +87,7 @@ Para copiar un slice, usamos la función `copy`. Esto crea una copia independien
 ### **Ejemplo:**
 
 ```go
-go
-Copy code
+
 t := []int{1, 2, 3, 4, 5}
 v := make([]int, len(t))
 
@@ -117,15 +106,12 @@ fmt.Println(v) // [99 2 3 4 5]
 Si el slice destino es más pequeño, solo se copiarán los elementos que quepan:
 
 ```go
-go
-Copy code
+
 v := make([]int, 2)
 copy(v, t)
 fmt.Println(v) // [1 2]
 
 ```
-
----
 
 ## **5. Insertar Elementos en un Slice**
 
@@ -134,8 +120,7 @@ Go no tiene una función incorporada para insertar elementos en un slice. Debemo
 ### **Implementación:**
 
 ```go
-go
-Copy code
+
 import "errors"
 
 func insert(orig []int, index int, value int) ([]int, error) {
@@ -155,8 +140,7 @@ func insert(orig []int, index int, value int) ([]int, error) {
 ### **Ejemplo de Uso:**
 
 ```go
-go
-Copy code
+
 t := []int{1, 2, 3, 4, 5}
 t, err := insert(t, 2, 99)
 if err == nil {
@@ -167,8 +151,6 @@ if err == nil {
 
 ```
 
----
-
 ## **6. Eliminar Elementos de un Slice**
 
 Para eliminar elementos, usamos una estrategia similar a la inserción, combinando `append` y slicing.
@@ -176,8 +158,7 @@ Para eliminar elementos, usamos una estrategia similar a la inserción, combinan
 ### **Implementación:**
 
 ```go
-go
-Copy code
+
 func delete(orig []int, index int) ([]int, error) {
     if index < 0 || index >= len(orig) {
         return nil, errors.New("Index out of range")
@@ -191,8 +172,7 @@ func delete(orig []int, index int) ([]int, error) {
 ### **Ejemplo de Uso:**
 
 ```go
-go
-Copy code
+
 t := []int{1, 2, 3, 4, 5}
 t, err := delete(t, 2)
 if err == nil {
@@ -202,8 +182,6 @@ if err == nil {
 }
 
 ```
-
----
 
 ## **7. Resumen**
 

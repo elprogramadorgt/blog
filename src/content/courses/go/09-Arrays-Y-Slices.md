@@ -58,8 +58,6 @@ fmt.Println(len(nums)) // Imprime: 4
 
 ```
 
----
-
 ## **2. Arrays Multidimensionales**
 
 Go permite definir arrays con múltiples dimensiones. Por ejemplo, un **array bidimensional** se puede visualizar como una tabla o una cuadrícula.
@@ -79,8 +77,6 @@ fmt.Println(table)
 //  [0 0 3]]
 
 ```
-
----
 
 ## **3. Slices**
 
@@ -120,8 +116,6 @@ fmt.Println(s) // Imprime: [1 2 3 4 5]
 
 ```
 
----
-
 ## **4. Propiedades Internas de un Slice**
 
 Un slice tiene tres propiedades principales:
@@ -144,8 +138,6 @@ fmt.Println(cap(s)) // Imprime: 10 (capacidad duplicada)
 
 ```
 
----
-
 ## **5. Asignación y Referencias en Slices**
 
 Cuando asignas un slice a otra variable, ambas comparten la misma referencia al array subyacente.
@@ -161,8 +153,6 @@ fmt.Println(s1) // Imprime: [99 2 3]
 fmt.Println(s2) // Imprime: [99 2 3]
 
 ```
-
----
 
 ## **6. Creación de un Nuevo Array al Superar la Capacidad**
 
@@ -182,13 +172,9 @@ fmt.Println(s2) // Imprime: [99 2 3 4]
 
 ```
 
----
-
 ## **7. Slices y Garbage Collector**
 
 Cuando un slice deja de ser utilizado o apunta a un nuevo array, el **garbage collector** de Go libera la memoria del array anterior si no hay más referencias activas. Esto optimiza el uso de la memoria.
-
----
 
 ## **Resumen**
 

@@ -173,8 +173,6 @@ func main() {
 
 ```
 
----
-
 ## **Resumen**
 
 - **Go no realiza conversiones implícitas.** Todo debe ser explícito.

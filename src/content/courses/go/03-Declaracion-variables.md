@@ -23,8 +23,6 @@ Una variable es un espacio en memoria al que asignamos un nombre para almacenar 
 3. Tipo de dato (opcional si hay inferencia por inicialización).
 4. Valor (opcional).
 
----
-
 ## **Declaración básica de variables**
 
 Para declarar variables en Go usamos la palabra clave `var`. La sintaxis básica incluye el nombre de la variable, su tipo y un valor opcional.

@@ -159,8 +159,6 @@ func main() {
 
 **Nota:** `fallthrough` no verifica la condición del siguiente caso; simplemente lo ejecuta.
 
----
-
 ## **Switch sin Expresión**
 
 En Go, puedes usar `switch` sin especificar una expresión. Esto lo convierte en una alternativa flexible a múltiples `if-else`.
@@ -198,8 +196,6 @@ func main() {
 
 - Usa `if` para rangos o evaluaciones complejas.
 - Usa `switch` para valores discretos o cuando los casos están claramente definidos.
-
----
 
 ## **Resumen**
 
