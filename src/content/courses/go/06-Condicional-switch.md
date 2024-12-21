@@ -13,8 +13,6 @@ published: true
 
 El `switch` es otro mecanismo para controlar el flujo en Go. A menudo es más claro y eficiente que una cadena de `if-else` cuando se trata de evaluar múltiples condiciones específicas.
 
----
-
 ## **¿Cuándo usar Switch?**
 
 El `switch` es ideal cuando tienes un conjunto de opciones claras y definidas. Aunque en otros lenguajes puede requerir sentencias como `break` para evitar la ejecución de casos subsiguientes, Go simplifica este comportamiento.

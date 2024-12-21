@@ -1,13 +1,12 @@
 ---
 title: 08 Funciones en Go
-description: "Un loop (o bucle) es una estructura que permite ejecutar un bloque de código repetidamente mientras se cumpla una condición. En Go, la única estructura de bucle disponible es el for, que puede adoptar diferentes formas para cubrir una variedad de casos de uso."
+description: "Las funciones son bloques de código que realizan tareas específicas y son fundamentales para estructurar, reutilizar y simplificar nuestro programa. En Go, las funciones son extremadamente flexibles y ofrecen características únicas, como la posibilidad de retornar múltiples valores."
 date: "2023-04-24T00:00:00"
 url: "/courses/go/"
 tags:
   - Go
   - Programming
-  - Switch
-  - Conditions
+  - Functions
 published: true
 ---
 
@@ -169,23 +168,60 @@ func addNum(num1 int, num2 int) (sum int) {
 
 ## **6. Funciones Variádicas**
 
-Las funciones variádicas aceptan un número variable de argumentos. Esto se logra con `...` antes del tipo del parámetro.
+Una función **variádica** puede recibir un número indefinido de argumentos del mismo tipo. Esto permite que el código sea más dinámico y reutilizable.
+
+### **Definición:**
+
+La sintaxis para una función variádica incluye `...` antes del tipo del argumento.
+
+```go
+
+func nombreFuncion(parametrosFijos, args ...tipo) tipoRetorno {
+    // Código
+}
+
+```
 
 ### **Ejemplo:**
 
 ```go
 
-func sum(nums ...int) int {
-    total := 0
-    for _, num := range nums {
-        total += num
+func addNums(total int, nums ...int) int {
+    for _, n := range nums {
+        total += n
     }
     return total
 }
 
 func main() {
-    fmt.Println(sum(1, 2, 3, 4)) // Imprime: 10
+    fmt.Println(addNums(10, 1, 2, 3)) // Imprime: 16
 }
+
+```
+
+### **Notas:**
+
+1. **Solo un argumento variádico:** Una función no puede tener más de un argumento variádico.
+2. **Debe ser el último:** El argumento variádico debe ser el último en la lista de parámetros.
+
+```go
+
+// Esto genera un error
+func invalid(nums ...int, extras ...string) {}
+
+// Esto es válido
+func valid(name string, nums ...int) {}
+
+```
+
+### **Conversión de Slices a Argumentos Variádicos:**
+
+Si tienes un `slice` y necesitas pasarlo a una función variádica, utiliza `...`.
+
+```go
+
+nums := []int{1, 2, 3}
+fmt.Println(addNums(10, nums...)) // Imprime: 16
 
 ```
 
