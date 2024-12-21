@@ -1,5 +1,5 @@
 ---
-title: 13 Mapeando Propiedades JSON en Go
+title: 16 Mapeando Propiedades JSON en Go
 description: "Aprende a manejar diferentes formatos de campos en JSON usando struct field tags en Go, y descubre cómo acceder a datos complejos anidados dentro de JSON."
 date: "2024-06-24T00:00:00"
 url: "/courses/go/"

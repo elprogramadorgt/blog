@@ -1,5 +1,5 @@
 ---
-title: 12 Trabajando con JSON en Go
+title: 15 Trabajando con JSON en Go
 description: "Aprende a decodificar JSON en Go, incluyendo objetos, arrays y datos anidados, utilizando struct field tags y métodos eficientes para manejar datos JSON."
 date: "2024-06-04T00:00:00"
 url: "/courses/go/"

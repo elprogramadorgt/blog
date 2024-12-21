@@ -1,5 +1,5 @@
 ---
-title: 09 Métodos en Structs y Comparación en Go
+title: 12 Métodos en Structs y Comparación en Go
 description: "Aprende a agregar métodos a structs en Go, incluyendo el uso de punteros para actualizar valores y técnicas para comparar structs utilizando el paquete cmp."
 date: "2024-04-30T00:00:00"
 url: "/courses/go/"

@@ -1,5 +1,5 @@
 ---
-title: 10 Trabajando con Maps en Go
+title: 13 Trabajando con Maps en Go
 description: "Aprende a utilizar maps en Go, incluyendo su creación, inicialización, acceso, validación de claves, eliminación de elementos y conteo de elementos."
 date: "2024-05-14T00:00:00"
 url: "/courses/go/"
